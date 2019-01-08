@@ -1,0 +1,29 @@
+/*----------------------------------------------------------------------------------
+# STANDARDGRUPPEN
+----------------------------------------------------------------------------------*/
+.xfFullGroup:not(.formContentBody), .xfMpuAddressBlock, .xfMpuPersonBlock {
+	@include box-shadow(1px, 1px, 3px, 1px, color(grey, dark));
+    padding: 10px;
+	background: color(white);
+	margin-bottom: 30px;
+}
+
+.groupTitle {
+	font-size: fontsize(title);
+	line-height: 1.1 !important;
+	background: none !important;
+	border-left: 4px solid color(primary, light) !important;
+	padding-left: 10px !important;
+	font-weight: bold !important;
+	font-family: $font;
+}
+
+.xfFullGroup:not(.formContentBody) {
+	.xfMpuAddressBlock, .xfMpuPersonBlock {
+		@include box-shadow(0, 0, 0, 0, white);
+	}
+}
+
+.xfMpuPersonBlock + *, .xfMpuAddressBlock + * {
+	border-top: 1px solid color(primary, dark);
+}

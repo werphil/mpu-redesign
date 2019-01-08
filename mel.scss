@@ -1,0 +1,19 @@
+/* @change: Font als lokale Ressource */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@import '_imports';
+@import 'mel/mel.layout.scss';
+@import 'mel/mel.header.scss';
+@import 'mel/mel.new.scss';
+@import 'mel/mel.paginator.scss';
+@import 'mel/mel.filter.scss';
+@import 'mel/mel.buttons.scss';
+@import 'mel/mel.petition.scss';
+@import 'mel/mel.formstack.scss';
+
+@import 'mel/petition.layout.scss';
+@import 'mel/petition.header.scss';
+@import 'mel/petition.navi.scss';
+@import 'mel/petition.properties.scss';
+@import 'mel/petition.umschlag.scss';
+

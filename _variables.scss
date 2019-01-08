@@ -1,0 +1,64 @@
+
+/* FARBEN
+------------------------------------------------------------------------------------*/
+$colors: (
+    primary: (
+        light: #00436a,
+        dark: #00264b
+    ),
+    hover: (
+        light: #00436B,
+        dark: #001A32
+    ),
+    support: (
+        light: #E8EEF1,
+        dark: #80A1B4
+    ),
+    red: #A82C10,
+    danger: #DD300E,
+    success: #3D8544,
+    grey: (
+        light:#F2F2F2,
+        dark: #4D4D4D
+    ),
+    black: black,
+    white: white,
+    input: (
+        default: #F2F2F2,
+        focus: #E8EEF1
+    )
+);
+
+
+/* FONTS
+------------------------------------------------------------------------------------*/
+
+$font: 'Open Sans', sans-serif !important;
+
+$fontSizes: (
+    h1: 32px !important,
+    h2: 24px !important,
+    title: 18px !important,
+    lead: 16px !important,
+    hint: 11px !important,
+    body: 14px !important,
+    button: 14px !important
+);
+
+
+
+/* RESPONSIVENESS
+------------------------------------------------------------------------------------*/
+
+$breakpoints: (
+  sm: 767px,
+  md: 992px,
+  lg: 1200px
+);
+
+// EINSTELLUNGEN MOBILE @todo: sinnvolle Variablennamen
+$headerHeight: 45px;
+$navIconWidth: 40px;
+
+// EINSTELLUNGEN DESKTOP
+$coverHeader: 130px;

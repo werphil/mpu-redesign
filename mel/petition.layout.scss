@@ -1,0 +1,60 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# LAYOUT DER MELDUNG
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+// Jede Meldung soll den vollen Bildschirm ausnützen
+#content #contentContainer #overlay {
+	width: 100% !important;
+	height: 100% !important;
+	left: 0 !important;
+	right: 0 !important;
+	top: 0 !important;
+	bottom: 0 !important;
+	margin: auto !important;
+	padding: 0 !important;
+	min-width: auto !important;
+    
+
+/*----------------------------------------------------------------------------------
+# PETITION CONTENT (IM OVERLAY)
+----------------------------------------------------------------------------------*/
+    #melContent {
+		margin: 0 !important;
+		padding: 0 10px !important;
+        font-family: $font;
+        position: relative;
+        display: flex; // @comp
+		flex-flow: column nowrap;
+		
+		@include respond-to(md) {
+			padding: 0 !important;
+		}
+
+    }
+
+    #coverHeader {
+        padding-left: 0;
+	    flex: 0 0 $headerHeight;
+    }
+
+    #formular.forContent {
+		border: none !important;
+		position: relative !important;
+		overflow: hidden;
+		flex: 1 0 auto;
+		padding: 0;
+		
+		iframe {
+			height: 100% !important; /* @comp, @layout, @todo! */
+			max-height: 100% !important;
+			position: absolute;
+			overflow: hidden;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 100% !important;
+		}
+	}
+}

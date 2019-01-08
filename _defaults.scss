@@ -1,0 +1,141 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# STANDARDKLASSEN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+// sollten erweitert werden um die Sache etwas DRYer werden zu lassen
+
+
+
+/*----------------------------------------------------------------------------------
+# Setzt alle Eigenschaften auf Standard
+----------------------------------------------------------------------------------*/
+%default {
+    font-family: $font;
+    font-weight: normal !important;
+    font-size: fontsize(body);
+    line-height: 1;
+    border: none !important;
+    color: color(black);
+    text-shadow: none !important;
+    background: none !important;
+}
+
+%boxdefault {
+    @extend %default;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+
+/*----------------------------------------------------------------------------------
+# BUTTONS
+----------------------------------------------------------------------------------*/
+%button {
+    @extend %boxdefault;
+    display: inline-block !important;
+    height: auto !important;
+    padding: 10px !important;
+    color: color(black) !important;
+    border: 1px solid color(black) !important;
+    font-size: fontsize(button);
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    
+    &:hover, &:active {
+        @include box-shadow(0px, 0px, 5px, 0px, color(grey, dark));
+    }
+}
+
+%primary-button-template {
+    background: color(primary, dark) !important;
+    color: color(white) !important;
+
+    &:hover, &:active {
+        @include box-shadow(0px, 0px, 5px, 0px, color(hover, dark));
+    }
+}
+
+%primarybutton {
+    @extend %button;
+    @extend %primary-button-template;
+}
+
+%linkbutton {
+    @extend %button;
+    text-decoration: none;
+}
+
+%cancelbutton {
+    @extend %button;
+    border-color: color(red) !important;
+    color: color(red) !important;
+    
+    &:hover {
+        @include box-shadow(0px, 0px, 5px, 0px, color(red));
+    }
+}
+
+%umschlagbutton {
+    @extend %button;
+    font-size: fontsize(title);
+    padding: 20px !important;
+}
+%primaryumschlagbutton {
+    @extend %umschlagbutton;
+    @extend %primary-button-template;
+}
+
+/*----------------------------------------------------------------------------------
+# CONTROLS
+----------------------------------------------------------------------------------*/
+%control {
+    @extend %boxdefault;
+    border-bottom: 2px solid color(primary, light) !important;
+
+    &:hover, &:active, &:focus {
+        background: none !important;
+    }
+}
+
+// v.a. für text und select
+%input {
+    @extend %control;
+    padding: 10px;
+    background: color(input, default) !important;
+
+    &:focus, &:active, &:hover {
+        border-bottom-color: color(hover, light) !important;
+        background: color(input, focus) !important;
+    }
+    &:focus, &:active {
+        border-bottom-color: color(hover, dark) !important;
+        border-bottom-width: 3px !important;
+    }
+}
+
+/*----------------------------------------------------------------------------------
+# OEGV-STYLED HEADER
+----------------------------------------------------------------------------------*/
+@include respond-to(md) {
+%mobileHeader {
+    height: $headerHeight;
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: color(primary, dark);
+    border-bottom: 5px solid color(primary, light);
+    line-height: $headerHeight !important;
+}
+
+}
+
+
+/*----------------------------------------------------------------------------------
+# INFOS, ERRORS, ...
+----------------------------------------------------------------------------------*/
+%errorIcon {
+    @include circle(18px);
+    background: color(danger);
+    color: color(white);
+    content: "!";
+}

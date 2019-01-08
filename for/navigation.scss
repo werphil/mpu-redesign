@@ -1,0 +1,212 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# FORMULAR - FORMULARSEITEN MENU
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+%menuhover {
+    background: color(white) !important;
+    color: color(black) !important;
+}
+
+#navigation {
+    position: static;
+	direction: rtl;
+    counter-reset: navi;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0 !important;
+    padding-left: 10px !important;
+    background: color(support, light);
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    @include transition(all, 0.5s, ease-in-out);
+
+    @include respond-to(md) {
+        display: block;
+        direction: ltr;
+        overflow: hidden;
+    }
+
+/*----------------------------------------------------------------------------------
+# NAVI HOVER
+----------------------------------------------------------------------------------*/
+    &:hover, &:active {
+
+        @include respond-to(md) {
+            height: 60%;
+            overflow-y: scroll;
+            position: absolute;
+            z-index: 99999;
+        }
+
+        .xfControl a {
+            width: auto;
+            white-space: normal;
+        }
+    }
+
+    &::before {
+        direction: ltr;
+        content: "Formularnavigation";
+        font-weight: bold;
+        font-size: 1.2em;
+        width: 100%;
+        display: block;
+        height: $navi_top_hoehe;
+        padding-left: 10px;
+        line-height: $navi_top_hoehe;
+        margin-bottom: $navi_top_margin;
+
+        @include respond-to(md) {
+            content: "\21C5 Aktuelle Seite:";
+            cursor: pointer;
+            margin: 0;
+        }
+    }
+/*----------------------------------------------------------------------------------
+# FORMULARSEITEN
+----------------------------------------------------------------------------------*/
+    .xfControl {
+        direction: ltr;
+        padding: 0 !important;
+        margin: 3px 0 !important;
+        counter-increment: navi;
+        display: block;
+        width: 100%;
+        @include transition(all, 0.5s, ease-in-out);
+
+        @include respond-to(md) {
+            display: inline-block;
+            width: 30%;
+            margin-right: 5px;
+        }
+
+        @include respond-to(sm) {
+            width: 100%;
+            display: block;
+        }
+
+        // Zusammenfassung braucht keine Nummer
+        &:last-of-type a::before {
+            display: none !important;
+        }
+
+        a {
+            background: none;
+            color: black !important;
+            font-family: $font;
+            font-size: fontsize(lead);
+            line-height: 1.1 !important;
+            font-weight: normal !important;
+            padding: 15px !important;
+            margin: 0 !important;
+            display: block !important;
+            width: 100% !important;
+            overflow: hidden;
+            white-space: nowrap;
+
+            @include respond-to(md) {
+                padding: 15px 0 !important;
+            }
+
+            &::before {
+                @include circle(32px);
+                content: counter(navi);
+                font-size: fontsize(body);
+                margin-right: 5px;
+                background: color(primary, light);
+                color: color(white);
+            }
+
+            &:hover {
+                @extend %menuhover;
+
+                a {
+                    overflow: visible;
+                }
+
+                &::before {
+                    @include box-shadow(0px, 0px, 3px, 0px, color(white));
+                }
+            }
+        }
+/*----------------------------------------------------------------------------------
+# AKTIVE SEITE
+----------------------------------------------------------------------------------*/
+        &.activePageLink {
+
+            @include respond-to(md) {
+                position: absolute;
+                top: 0;
+                left: 180px;
+                width: auto;
+                height: $navi_top_hoehe;
+                line-height: $navi_top_hoehe !important;
+                margin: 0 !important;
+
+                h1 {
+                    height: $navi_top_hoehe;
+                    line-height: $navi_top_hoehe !important;
+                }
+            }
+
+            a {
+                @extend %menuhover;
+                font-weight: bold !important;
+
+                @include respond-to(md) {
+                    background: none !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    font-size: 1.2em !important;
+                    height: $navi_top_hoehe;
+                    line-height: $navi_top_hoehe !important;
+
+                    &::before {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+
+/*----------------------------------------------------------------------------------
+# FEHLER ANZEIGE
+----------------------------------------------------------------------------------*/        
+        &.invalidPage {
+            .validationInfoContainer {
+                display: none;
+            }
+            a {
+                color: color(danger) !important;
+                &::before {
+                    background: color(danger);
+                }
+    
+                &::after {
+                    content: "!";
+                    padding: 3px 5px;
+                    margin-left: 5px;
+                    background: color(danger);
+                    color: color(white);
+                }
+            }
+        }
+    }
+
+    .xfTrigger h1 {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        @include respond-to(md) {
+            display: inline-block;
+        }
+    } 
+    // Pfeile ausblenden
+    .arrowClass {
+        display: none;
+    }
+}

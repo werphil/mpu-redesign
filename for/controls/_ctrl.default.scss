@@ -1,0 +1,30 @@
+/*----------------------------------------------------------------------------------
+# STEUERELEMENTE - STANDARD
+----------------------------------------------------------------------------------*/
+
+.formContentBody .xfControl {
+	margin-bottom: 20px !important;
+	background: color(white);
+
+	.labelContainer {
+		position: relative;
+		display: block;
+		width: 100%;
+		text-align: left;
+		margin-bottom: 5px;
+	}
+
+	.xfLabel {
+		font-family: $font;
+		font-size: fontsize(lead);
+		line-height: 1.2;
+	}
+
+	.widgetContainer {
+		position: relative;
+		padding: 0;
+		width: 100% !important;
+		height: auto !important;
+
+	}
+}

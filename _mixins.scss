@@ -1,0 +1,133 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# MIXINS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+// FARBE AUS PALETTE
+// -------------------------------------------------------------------------------
+@function color($farbe, $theme:"") {
+    @if map-has-key($colors, $farbe) {
+        @if $theme == "" {
+            @return map-get($colors, $farbe);
+        }
+        @else {
+            @if map-has-key(map-get($colors, $farbe), $theme) {
+                @return map-get(map-get($colors, $farbe), $theme);
+            }
+            @warn "Falsches Theme angegeben";
+            @return black;
+        }
+        
+    }
+
+    @warn "Falsche Farbe angegeben";
+    @return black;
+}
+
+// SCHRIFTGROESSE
+// -------------------------------------------------------------------------------
+@function fontsize($key) {
+    @if map-has-key($fontSizes, $key) {
+      @return map-get($fontSizes, $key);
+    }
+  
+    @warn "Ungültig: `#{$key}` in den Schriftgrößen.";
+    @return 14px !important;
+}
+
+// RESPONSIVENESS
+// -------------------------------------------------------------------------------
+@mixin respond-to($breakpoint) { 
+    @if map-has-key($breakpoints, $breakpoint) {
+      @media (max-width: #{map-get($breakpoints, $breakpoint)}) {
+        @content;
+      }
+    }
+  
+    @else {
+      @warn "Ungültiger Breakpoint";
+    }
+}
+
+
+// PREFIX
+// -------------------------------------------------------------------------------
+@mixin box-shadow($top, $left, $blur, $border, $color) {
+    -webkit-box-shadow: $top $left $blur $border $color !important;
+    -moz-box-shadow:    $top $left $blur $border $color !important;
+    box-shadow:         $top $left $blur $border $color !important;
+}
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
+
+@mixin transition($type, $duration, $effect) {
+    -webkit-transition: $type $duration $effect;
+    -moz-transition: $type $duration $effect;
+    -o-transition: $type $duration $effect;
+    transition: $type $duration $effect;
+}
+
+@mixin transition-delay($delay) {
+    -webkit-transition-delay: $delay;
+    -moz-transition-delay: $delay;
+    -o-transition-delay: $delay;
+    transition-delay: $delay;
+}
+
+
+// HELPER FUNCTIONS
+// -------------------------------------------------------------------------------
+%vertical-centered {
+    top: 50%;
+	@include transform(translateY(-50%));
+}
+
+@mixin circle($size) {
+    width: $size !important;
+    height: $size !important;
+    display: inline-block !important;
+    line-height: $size !important;
+    border-radius: 50% !important;
+    text-align: center !important;
+}
+
+// @todo: eigentlich eher eine default-Klasse
+// -------------------------------------------------------------------------------
+@mixin tooltip($height, $width) {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        color: color(white);
+        background: color(grey, dark);
+        height: $height;
+        line-height: $height;
+        text-align: center;
+        visibility: hidden;
+        border-radius: 2px;
+        padding: 5px;
+        content: "";
+        font-size: fontsize(hint);
+        width: $width;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        margin-top: -8px;
+        width: 0; height: 0;
+        border-right: 8px solid color(grey, dark);
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        visibility: hidden;
+    }
+
+    &:hover::before, &:hover::after {
+        visibility: visible;
+    }
+}
+

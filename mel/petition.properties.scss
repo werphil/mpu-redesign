@@ -1,0 +1,55 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# FORMULAR - MELDUNGSEIGENSCHAFTEN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* fix für Umschlagbuttons in den Eigenschaften (Speichern soll primary sein) */
+
+#petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection {
+	/* buttonSection wird in umschlag.scss definiert, aber kein abweichendes Parent im Umschlag zu PetitionProperties, daher hier override */
+
+	position: static;
+	text-align: left;
+	@include box-shadow(0, 0, 0, 0, white);
+
+
+	input:nth-of-type(2) {
+		@extend %umschlagbutton;
+	}
+	input[value="Speichern"] {
+		@extend %primaryumschlagbutton;
+	}
+}
+
+/* Inputs Präfix und Titel */
+.propertiesFields {
+	margin-top: 40px;
+
+	.inputContainer {
+		margin-bottom: 20px;
+
+		.widgetContainer {
+			@include tooltip(20px, 200px);
+
+			&::before {
+				left: calc(101% + 8px);
+				top: 5px;
+			}
+			
+			&::after {
+				left: 101%;
+			}
+		}
+
+	}
+	input {
+		@extend %input;
+	}
+
+	/* @hax */
+	div:nth-of-type(1) .widgetContainer::before {
+		content: "z.B. Kundennummer";
+	}
+	div:nth-of-type(2) .widgetContainer::before {
+		content: "z.B. Name des Kunden";
+	}
+}

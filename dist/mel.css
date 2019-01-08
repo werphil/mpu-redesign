@@ -1,0 +1,1283 @@
+@charset "UTF-8";
+/* @change: Font als lokale Ressource */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+/* FARBEN
+------------------------------------------------------------------------------------*/
+/* FONTS
+------------------------------------------------------------------------------------*/
+/* RESPONSIVENESS
+------------------------------------------------------------------------------------*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# MIXINS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data .markedAsDone::before, .petitionTable td.petitionCellFormStack table.ui-datagrid-data td::before {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# STANDARDKLASSEN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*----------------------------------------------------------------------------------
+# Setzt alle Eigenschaften auf Standard
+----------------------------------------------------------------------------------*/
+#melContent .headerWrapper .contentHeader h1, #content #contentContainer #melContent .petitionTableHeaderWrapper .listPetitionHeader h2, .sortWidgetsContainer .sortwidget .ui-selectonemenu .ui-selectonemenu-trigger, .sortWidgetsContainer .sortwidget .ui-selectonemenu .ui-selectonemenu-label, .petitionTable > div.ui-datatable-header, .sortWidgetsContainer .sortwidget .ui-selectonemenu, .filterLabel input, .propertiesFields input, .petitionTable td.petitionCellFormStack .formStackActionButtons .melActionButton, .ui-datatable .buttonSection input, .ui-datatable .buttonSection button, #melContent .headerWrapper .contentHeaderButtonBox form .melActionButton.headerButton, #petitionCover.petitionBorder #buttonSection input, #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input:nth-of-type(2), #petitionCover.petitionBorder #buttonSection input:nth-of-type(2), #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input[value=Speichern], .ui-datatable a.melActionLink, #content #contentContainer #melContent .petitionTableHeaderWrapper .rightSplitContainer a.external, .ui-datatable .buttonSection input:first-child,
+.ui-datatable .buttonSection input[value=Bearbeiten],
+.ui-datatable .buttonSection input[value=Ansehen],
+.ui-datatable .buttonSection a.melActionButton {
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  line-height: 1;
+  border: none !important;
+  color: black;
+  text-shadow: none !important;
+  background: none !important;
+}
+
+.sortWidgetsContainer .sortwidget .ui-selectonemenu .ui-selectonemenu-trigger, .sortWidgetsContainer .sortwidget .ui-selectonemenu .ui-selectonemenu-label, .petitionTable > div.ui-datatable-header, .sortWidgetsContainer .sortwidget .ui-selectonemenu, .filterLabel input, .propertiesFields input, .petitionTable td.petitionCellFormStack .formStackActionButtons .melActionButton, .ui-datatable .buttonSection input, .ui-datatable .buttonSection button, #melContent .headerWrapper .contentHeaderButtonBox form .melActionButton.headerButton, #petitionCover.petitionBorder #buttonSection input, #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input:nth-of-type(2), #petitionCover.petitionBorder #buttonSection input:nth-of-type(2), #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input[value=Speichern], .ui-datatable a.melActionLink, #content #contentContainer #melContent .petitionTableHeaderWrapper .rightSplitContainer a.external, .ui-datatable .buttonSection input:first-child,
+.ui-datatable .buttonSection input[value=Bearbeiten],
+.ui-datatable .buttonSection input[value=Ansehen],
+.ui-datatable .buttonSection a.melActionButton {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/*----------------------------------------------------------------------------------
+# BUTTONS
+----------------------------------------------------------------------------------*/
+.petitionTable td.petitionCellFormStack .formStackActionButtons .melActionButton, .ui-datatable .buttonSection input, .ui-datatable .buttonSection button, #melContent .headerWrapper .contentHeaderButtonBox form .melActionButton.headerButton, #petitionCover.petitionBorder #buttonSection input, #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input:nth-of-type(2), #petitionCover.petitionBorder #buttonSection input:nth-of-type(2), #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input[value=Speichern], .ui-datatable a.melActionLink, #content #contentContainer #melContent .petitionTableHeaderWrapper .rightSplitContainer a.external, .ui-datatable .buttonSection input:first-child,
+.ui-datatable .buttonSection input[value=Bearbeiten],
+.ui-datatable .buttonSection input[value=Ansehen],
+.ui-datatable .buttonSection a.melActionButton {
+  display: inline-block !important;
+  height: auto !important;
+  padding: 10px !important;
+  color: black !important;
+  border: 1px solid black !important;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+.petitionTable td.petitionCellFormStack .formStackActionButtons .melActionButton:hover, .ui-datatable .buttonSection input:hover, .ui-datatable .buttonSection button:hover, #melContent .headerWrapper .contentHeaderButtonBox form .melActionButton.headerButton:hover, #petitionCover.petitionBorder #buttonSection input:hover, #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input:hover:nth-of-type(2), #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input[value=Speichern]:hover, .ui-datatable a.melActionLink:hover, #content #contentContainer #melContent .petitionTableHeaderWrapper .rightSplitContainer a.external:hover,
+.ui-datatable .buttonSection a.melActionButton:hover, .petitionTable td.petitionCellFormStack .formStackActionButtons .melActionButton:active, .ui-datatable .buttonSection input:active, .ui-datatable .buttonSection button:active, #melContent .headerWrapper .contentHeaderButtonBox form .melActionButton.headerButton:active, #petitionCover.petitionBorder #buttonSection input:active, #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input:active:nth-of-type(2), #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input[value=Speichern]:active, .ui-datatable a.melActionLink:active, #content #contentContainer #melContent .petitionTableHeaderWrapper .rightSplitContainer a.external:active,
+.ui-datatable .buttonSection a.melActionButton:active {
+  -webkit-box-shadow: 0px 0px 5px 0px #4D4D4D !important;
+  -moz-box-shadow: 0px 0px 5px 0px #4D4D4D !important;
+  box-shadow: 0px 0px 5px 0px #4D4D4D !important;
+}
+
+#petitionCover.petitionBorder #buttonSection input:nth-of-type(2), #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input[value=Speichern], .ui-datatable .buttonSection input:first-child,
+.ui-datatable .buttonSection input[value=Bearbeiten],
+.ui-datatable .buttonSection input[value=Ansehen],
+.ui-datatable .buttonSection a.melActionButton {
+  background: #00264b !important;
+  color: white !important;
+}
+#petitionCover.petitionBorder #buttonSection input:hover:nth-of-type(2), #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input[value=Speichern]:hover, .ui-datatable .buttonSection input:hover:first-child,
+.ui-datatable .buttonSection input[value=Bearbeiten]:hover,
+.ui-datatable .buttonSection input[value=Ansehen]:hover,
+.ui-datatable .buttonSection a.melActionButton:hover, #petitionCover.petitionBorder #buttonSection input:active:nth-of-type(2), #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input[value=Speichern]:active, .ui-datatable .buttonSection input:active:first-child,
+.ui-datatable .buttonSection input[value=Bearbeiten]:active,
+.ui-datatable .buttonSection input[value=Ansehen]:active,
+.ui-datatable .buttonSection a.melActionButton:active {
+  -webkit-box-shadow: 0px 0px 5px 0px #001A32 !important;
+  -moz-box-shadow: 0px 0px 5px 0px #001A32 !important;
+  box-shadow: 0px 0px 5px 0px #001A32 !important;
+}
+
+.ui-datatable a.melActionLink, #content #contentContainer #melContent .petitionTableHeaderWrapper .rightSplitContainer a.external {
+  text-decoration: none;
+}
+
+#petitionCover.petitionBorder #buttonSection input, #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input:nth-of-type(2), #petitionCover.petitionBorder #buttonSection input:nth-of-type(2), #petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection input[value=Speichern] {
+  font-size: 18px !important;
+  padding: 20px !important;
+}
+
+/*----------------------------------------------------------------------------------
+# CONTROLS
+----------------------------------------------------------------------------------*/
+.sortWidgetsContainer .sortwidget .ui-selectonemenu, .filterLabel input, .propertiesFields input {
+  border-bottom: 2px solid #00436a !important;
+}
+.sortWidgetsContainer .sortwidget .ui-selectonemenu:hover, .filterLabel input:hover, .propertiesFields input:hover, .sortWidgetsContainer .sortwidget .ui-selectonemenu:active, .filterLabel input:active, .propertiesFields input:active, .sortWidgetsContainer .sortwidget .ui-selectonemenu:focus, .filterLabel input:focus, .propertiesFields input:focus {
+  background: none !important;
+}
+
+.propertiesFields input {
+  padding: 10px;
+  background: #F2F2F2 !important;
+}
+.propertiesFields input:focus, .propertiesFields input:active, .propertiesFields input:hover {
+  border-bottom-color: #00436B !important;
+  background: #E8EEF1 !important;
+}
+.propertiesFields input:focus, .propertiesFields input:active {
+  border-bottom-color: #001A32 !important;
+  border-bottom-width: 3px !important;
+}
+
+/*----------------------------------------------------------------------------------
+# OEGV-STYLED HEADER
+----------------------------------------------------------------------------------*/
+@media (max-width: 992px) {
+  #melContent #coverHeader, #header {
+    height: 45px;
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #00264b;
+    border-bottom: 5px solid #00436a;
+    line-height: 45px !important;
+  }
+}
+/*----------------------------------------------------------------------------------
+# INFOS, ERRORS, ...
+----------------------------------------------------------------------------------*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# LAYOUT DER MELDUNGSABLAGE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*----------------------------------------------------------------------------------
+# ALLGEMEINE WRAPPERS
+----------------------------------------------------------------------------------*/
+#content #contentContainer {
+  width: 100%;
+}
+#content #contentContainer #melContent {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 20px !important;
+  box-sizing: border-box;
+}
+@media (max-width: 992px) {
+  #content #contentContainer #melContent {
+    padding: 0 5px !important;
+  }
+}
+#content #contentContainer #melContent .petitionTableHeaderWrapper .listPetitionHeader {
+  width: 70%;
+}
+#content #contentContainer #melContent .petitionTableHeaderWrapper .listPetitionHeader h2 {
+  font-size: 24px !important;
+  font-weight: bold;
+  line-height: 1.1 !important;
+  margin-bottom: 5px !important;
+  width: 100% !important;
+}
+#content #contentContainer #melContent .petitionTableHeaderWrapper .rightSplitContainer {
+  float: right;
+  width: 30%;
+}
+/*----------------------------------------------------------------------------------
+# PETITION LISTE
+----------------------------------------------------------------------------------*/
+.ui-datatable-tablewrapper {
+  padding: 3px;
+}
+.ui-datatable-tablewrapper > table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# HEADER DER MELDUNGSABLAGE inkl. HEADERBUTTONS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*----------------------------------------------------------------------------------
+# HEADER IN DER MELDUNGSLISTE
+----------------------------------------------------------------------------------*/
+#melContent .headerWrapper .contentHeader {
+  margin-top: 20px;
+}
+@media (max-width: 992px) {
+  #melContent .headerWrapper .contentHeader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    line-height: 45px;
+    margin: 0;
+    padding: 0;
+  }
+}
+#melContent .headerWrapper .contentHeader h1 {
+  font-size: 32px !important;
+  line-height: 1.1;
+  color: #00264b !important;
+  width: 100%;
+}
+@media (max-width: 992px) {
+  #melContent .headerWrapper .contentHeader h1 {
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    line-height: 45px;
+  }
+}
+@media (max-width: 992px) {
+  #melContent .headerWrapper .contentHeaderButtonBox {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    margin: 0;
+    padding: 0;
+    z-index: 90;
+    width: 40px;
+    height: 45px;
+    text-align: right;
+    color: white !important;
+    font-size: 18px !important;
+    visibility: visible;
+    display: block;
+    cursor: pointer;
+  }
+  #melContent .headerWrapper .contentHeaderButtonBox::before {
+    content: "☰";
+    color: white !important;
+    width: 100%;
+    height: 100%;
+    font-size: 32px;
+    line-height: 45px;
+    text-align: center;
+  }
+  #melContent .headerWrapper .contentHeaderButtonBox:hover {
+    width: 300px;
+    color: white !important;
+  }
+  #melContent .headerWrapper .contentHeaderButtonBox:hover form {
+    display: block;
+  }
+}
+@media (max-width: 992px) {
+  #melContent .headerWrapper .contentHeaderButtonBox form {
+    display: none;
+    background: white;
+    width: 300px;
+    -webkit-box-shadow: 0px 2px 3px 1px #4D4D4D !important;
+    -moz-box-shadow: 0px 2px 3px 1px #4D4D4D !important;
+    box-shadow: 0px 2px 3px 1px #4D4D4D !important;
+  }
+}
+#melContent .headerWrapper .contentHeaderButtonBox form .melActionButton.headerButton {
+  font-size: 16px !important;
+  padding: 20px !important;
+}
+@media (max-width: 992px) {
+  #melContent .headerWrapper .contentHeaderButtonBox form .melActionButton.headerButton {
+    text-transform: none;
+    border: none !important;
+    display: block !important;
+    width: 100%;
+    margin: 0;
+  }
+  #melContent .headerWrapper .contentHeaderButtonBox form .melActionButton.headerButton:hover {
+    background: #00436a !important;
+    color: white !important;
+    -webkit-box-shadow: 0 0 0 0 white !important;
+    -moz-box-shadow: 0 0 0 0 white !important;
+    box-shadow: 0 0 0 0 white !important;
+  }
+}
+
+/*----------------------------------------------------------------------------------
+# MOBILE ANSICHT
+----------------------------------------------------------------------------------*/
+#header #melHeader img {
+  display: none;
+}
+
+/*----------------------------------------------------------------------------------
+# NEUE MELDUNGEN / FORMULARSAMMLUNGEN MENÜ
+----------------------------------------------------------------------------------*/
+.melListPetitionsFormEntry {
+  padding: 20px !important;
+}
+.melListPetitionsFormEntry .ivpName {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 1.2;
+}
+.melListPetitionsFormEntry a {
+  background-color: #00264b !important;
+  color: white !important;
+  border: none;
+  height: 35px;
+  padding: 0 10px !important;
+  line-height: 35px;
+  font-size: 14px !important;
+  display: inline-block;
+  margin-top: 10px !important;
+  font-weight: normal;
+}
+.melListPetitionsFormEntry a:hover {
+  background-color: #001A32;
+  -webkit-box-shadow: 0px 0px 4px 1px #001A32 !important;
+  -moz-box-shadow: 0px 0px 4px 1px #001A32 !important;
+  box-shadow: 0px 0px 4px 1px #001A32 !important;
+  color: white;
+}
+
+/*----------------------------------------------------------------------------------
+# PAGINATOR
+----------------------------------------------------------------------------------*/
+.ui-paginator {
+  background: none;
+  border: none;
+  font-size: 14px !important;
+}
+.ui-paginator .ui-state-default {
+  background: none;
+  border-radius: 0;
+  padding: 10px;
+}
+.ui-paginator .ui-state-default .ui-icon {
+  -webkit-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4);
+}
+.ui-paginator .ui-state-hover {
+  -webkit-box-shadow: 0px 0px 2px 1px #E8EEF1 !important;
+  -moz-box-shadow: 0px 0px 2px 1px #E8EEF1 !important;
+  box-shadow: 0px 0px 2px 1px #E8EEF1 !important;
+}
+
+.petitionTable .ui-paginator-bottom {
+  border: none;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# FILTERLEISTE BEI JEDER PETITIONTABLE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.sortWidgetsContainer .sortwidget .ui-selectonemenu, .filterLabel input {
+  border-bottom: 1px solid #00436a !important;
+}
+.sortWidgetsContainer .sortwidget .ui-selectonemenu:hover, .filterLabel input:hover, .sortWidgetsContainer .sortwidget .ui-selectonemenu:active, .filterLabel input:active, .sortWidgetsContainer .sortwidget .ui-selectonemenu:focus, .filterLabel input:focus, .sortWidgetsContainer .sortwidget .ui-selectonemenu .ui-state-focus, .filterLabel input .ui-state-focus {
+  border-bottom-width: 2px !important;
+}
+
+.petitionTable > div.ui-datatable-header {
+  margin-bottom: 0;
+  padding: 0 !important;
+  border-radius: none !important;
+}
+@media (max-width: 767px) {
+  .petitionTable > div.ui-datatable-header {
+    margin: 0 5px !important;
+  }
+}
+
+/*----------------------------------------------------------------------------------
+# TEXTFILTER
+----------------------------------------------------------------------------------*/
+.filterLabel {
+  position: relative;
+}
+.filterLabel label {
+  display: none;
+}
+.filterLabel input {
+  padding: 10px 0 !important;
+  width: 100% !important;
+  position: relative;
+  display: inline-block;
+}
+.filterLabel > span {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+@media (max-width: 992px) {
+  .filterLabel {
+    width: 100% !important;
+  }
+}
+
+/*----------------------------------------------------------------------------------
+# SORTIER-DROPDOWN - CONTROL
+----------------------------------------------------------------------------------*/
+.sortWidgetsContainer .sortwidget .ui-selectonemenu .ui-selectonemenu-label {
+  padding: 8px;
+  font-size: 14px !important;
+}
+.sortWidgetsContainer .sortwidget .ui-selectonemenu .ui-selectonemenu-trigger .ui-icon {
+  border-radius: 0 !important;
+  border: none;
+}
+.sortWidgetsContainer label {
+  font-weight: normal;
+  line-height: 10px;
+  border: none;
+}
+@media (max-width: 992px) {
+  .sortWidgetsContainer {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/*----------------------------------------------------------------------------------
+# SORTIERDROPDOWN - ITEMS
+----------------------------------------------------------------------------------*/
+.ui-selectonemenu-panel, .ui-selectonemenu-list {
+  border: none;
+  padding: 0.1em 0 !important;
+  overflow-x: hidden;
+}
+
+.ui-selectonemenu-panel * {
+  border-radius: 0;
+  margin: 0;
+}
+.ui-selectonemenu-panel .ui-selectonemenu-item {
+  font-size: 14px;
+  padding: 10px 5px;
+}
+.ui-selectonemenu-panel .ui-state-highlight, .ui-selectonemenu-panel .ui-selectonemenu-item:hover {
+  background: #00436a !important;
+  text-shadow: none;
+  box-shadow: none;
+  color: white !important;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# BUTTONS IN DER MELDUNGSLISTE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.ui-datatable a.melActionLink, .ui-datatable .buttonSection input:first-child,
+.ui-datatable .buttonSection input[value=Bearbeiten],
+.ui-datatable .buttonSection input[value=Ansehen],
+.ui-datatable .buttonSection a.melActionButton, .ui-datatable .buttonSection input, .ui-datatable .buttonSection button {
+  height: 35px !important;
+  line-height: 35px !important;
+  padding: 0 10px !important;
+}
+
+.ui-datatable {
+  /*----------------------------------------------------------------------------------
+  # BEARBEITEN, ANSEHEN, HERUNTERLADEN, ...
+  ----------------------------------------------------------------------------------*/
+  /*----------------------------------------------------------------------------------
+  # LÖSCHEN
+  ----------------------------------------------------------------------------------*/
+}
+.ui-datatable .buttonSection {
+  /* @test: Gisa-Button ist breiter */
+}
+@media (max-width: 767px) {
+  .ui-datatable .buttonSection input, .ui-datatable .buttonSection button {
+    margin-bottom: 5px !important;
+  }
+}
+.ui-datatable .buttonSection .ui-button {
+  background: white !important;
+}
+.ui-datatable a.melActionLink {
+  border: 1px solid transparent !important;
+  color: #A82C10 !important;
+}
+.ui-datatable a.melActionLink:hover {
+  border: 1px solid #A82C10 !important;
+  -webkit-box-shadow: 0 0 0 0 white !important;
+  -moz-box-shadow: 0 0 0 0 white !important;
+  box-shadow: 0 0 0 0 white !important;
+}
+
+/*----------------------------------------------------------------------------------
+# PETITIONS
+----------------------------------------------------------------------------------*/
+.petitionTable td.petitionCellFormStack, .petitionTable .petitionCell, .melListPetitionsFormEntry {
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 20px;
+  margin-bottom: 20px !important;
+  font-family: "Open Sans", sans-serif !important;
+  background: none !important;
+  border: none !important;
+  position: relative;
+  -webkit-box-shadow: 1px 1px 2px 1px #4D4D4D !important;
+  -moz-box-shadow: 1px 1px 2px 1px #4D4D4D !important;
+  box-shadow: 1px 1px 2px 1px #4D4D4D !important;
+}
+.petitionTable td.petitionCellFormStack:hover, .petitionTable .petitionCell:hover, .melListPetitionsFormEntry:hover {
+  -webkit-box-shadow: 1px 1px 2px 1px #00436a !important;
+  -moz-box-shadow: 1px 1px 2px 1px #00436a !important;
+  box-shadow: 1px 1px 2px 1px #00436a !important;
+}
+
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-column:hover, .petitionTable .petitionCell:hover {
+  background: -moz-linear-gradient(top, rgba(242, 242, 242, 0.65) 0%, rgba(242, 242, 242, 0) 100%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.65) 0%, rgba(242, 242, 242, 0) 100%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(242, 242, 242, 0.65) 0%, rgba(242, 242, 242, 0) 100%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6f2f2f2", endColorstr="#00f2f2f2",GradientType=0 ) !important;
+  /* IE6-9 */
+}
+
+.petitionTable tr.ui-datatable-odd {
+  background: none;
+}
+.petitionTable .petitionCell .petitionHeader {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
+@media (max-width: 767px) {
+  .petitionTable .petitionCell .petitionHeader {
+    font-size: 16px !important;
+  }
+}
+.petitionTable .petitionCell .petitionHeader .hintText {
+  font-size: 14px !important;
+}
+.petitionTable .petitionAttributes .fourColLayout {
+  font-size: 11px !important;
+  margin-bottom: 8px !important;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# FORMULARSAMMLUNGEN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.petitionTable td.petitionCellFormStack {
+  padding: 0 !important;
+  border: 1px solid #4D4D4D !important;
+  /*----------------------------------------------------------------------------------
+  # BUTTONS
+  ----------------------------------------------------------------------------------*/
+  /*----------------------------------------------------------------------------------
+  # ENTHALTENE PETITIONS
+  ----------------------------------------------------------------------------------*/
+}
+.petitionTable td.petitionCellFormStack:hover {
+  border: 1px solid #80A1B4 !important;
+}
+.petitionTable td.petitionCellFormStack > .petitionHeader {
+  background: #F2F2F2;
+  padding: 15px;
+  border: none !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
+.petitionTable td.petitionCellFormStack .petitionAttributes {
+  margin: 15px !important;
+}
+@media (max-width: 767px) {
+  .petitionTable td.petitionCellFormStack .petitionAttributes > div {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .petitionTable td.petitionCellFormStack .petitionAttributes .leftColumn {
+    width: 60%;
+  }
+  .petitionTable td.petitionCellFormStack .petitionAttributes .centerColumn:nth-of-type(2) {
+    display: none;
+  }
+}
+.petitionTable td.petitionCellFormStack .formStackActionButtons {
+  top: 10px;
+  right: 5px;
+  position: absolute;
+}
+@media (max-width: 767px) {
+  .petitionTable td.petitionCellFormStack .formStackActionButtons {
+    position: static;
+    display: block;
+    text-align: left;
+  }
+}
+.petitionTable td.petitionCellFormStack .ui-widget-content {
+  border: none;
+}
+.petitionTable td.petitionCellFormStack tr, .petitionTable td.petitionCellFormStack td {
+  background: none !important;
+  border: none !important;
+}
+.petitionTable td.petitionCellFormStack td {
+  padding: 20px !important;
+}
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data {
+  border: none;
+  box-shadow: none;
+  border-collapse: separate;
+  /* @layout */
+  border-spacing: 0 5px;
+  margin-left: 10px;
+  /*----------------------------------------------------------------------------------
+  # PROZESSANSICHT MIT NUMMERIERUNG
+  evtl. wieder weg falls Formularsammlungen ohne Reihenfolge
+  ----------------------------------------------------------------------------------*/
+  /*----------------------------------------------------------------------------------
+  # ERLEDIGT MARKIERTE MELDUNGEN
+  ----------------------------------------------------------------------------------*/
+}
+@media (max-width: 767px) {
+  .petitionTable td.petitionCellFormStack table.ui-datagrid-data {
+    margin-left: 2px;
+  }
+}
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data .petitionHeader {
+  font-size: 16px !important;
+  font-weight: normal !important;
+}
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-column {
+  border: none;
+  padding: 5px !important;
+  padding-left: 80px !important;
+}
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data .markedAsDone::before, .petitionTable td.petitionCellFormStack table.ui-datagrid-data td::before {
+  width: 48px !important;
+  height: 48px !important;
+  display: inline-block !important;
+  line-height: 48px !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  content: counter(rowNumber);
+  position: absolute;
+  left: 20px;
+  font-size: 18px !important;
+  color: white;
+  z-index: 99;
+}
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-content {
+  margin-right: 50px !important;
+  padding-bottom: 20px;
+}
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-row {
+  border: none;
+  box-shadow: none;
+  counter-increment: rowNumber;
+  position: relative;
+}
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data td::before {
+  background: #00436a;
+}
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data td:hover::before {
+  -webkit-box-shadow: 0px 0px 3px 1px #4D4D4D !important;
+  -moz-box-shadow: 0px 0px 3px 1px #4D4D4D !important;
+  box-shadow: 0px 0px 3px 1px #4D4D4D !important;
+}
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data td::after {
+  position: absolute;
+  left: 43px;
+  top: 0;
+  width: 2px;
+  background: #00436a;
+  height: 110%;
+  content: "";
+}
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data tr:first-child td::after {
+  top: 50%;
+  height: 60%;
+}
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data tr:last-child td::after {
+  height: 50%;
+}
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data .markedAsDone {
+  background: none;
+}
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data .markedAsDone::before {
+  background: #4D4D4D;
+  z-index: 100;
+}
+.petitionTable td.petitionCellFormStack table.ui-datagrid-data .markedAsDone input[value=Ansehen] {
+  background: #4D4D4D !important;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# LAYOUT DER MELDUNG
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#content #contentContainer #overlay {
+  width: 100% !important;
+  height: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  margin: auto !important;
+  padding: 0 !important;
+  min-width: auto !important;
+  /*----------------------------------------------------------------------------------
+  # PETITION CONTENT (IM OVERLAY)
+  ----------------------------------------------------------------------------------*/
+}
+#content #contentContainer #overlay #melContent {
+  margin: 0 !important;
+  padding: 0 10px !important;
+  font-family: "Open Sans", sans-serif !important;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+}
+@media (max-width: 992px) {
+  #content #contentContainer #overlay #melContent {
+    padding: 0 !important;
+  }
+}
+#content #contentContainer #overlay #coverHeader {
+  padding-left: 0;
+  flex: 0 0 45px;
+}
+#content #contentContainer #overlay #formular.forContent {
+  border: none !important;
+  position: relative !important;
+  overflow: hidden;
+  flex: 1 0 auto;
+  padding: 0;
+}
+#content #contentContainer #overlay #formular.forContent iframe {
+  height: 100% !important;
+  /* @comp, @layout, @todo! */
+  max-height: 100% !important;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100% !important;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# MEL - HEADERLEISTE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#melContent #coverHeader {
+  /*----------------------------------------------------------------------------------
+  # MELDUNG TITEL
+  ----------------------------------------------------------------------------------*/
+  /*----------------------------------------------------------------------------------
+  # MELDUNG SCHLIESSEN (ROTES X RECHTS OBEN)
+  ----------------------------------------------------------------------------------*/
+}
+@media (max-width: 992px) {
+  #melContent #coverHeader {
+    flex: 0 0 45px;
+    display: flex;
+    flex-flow: row nowrap;
+    min-width: 0px;
+  }
+}
+@media (max-width: 992px) {
+  #melContent #coverHeader .ivpCovertitleWrapper {
+    color: white;
+    height: 45px;
+    box-sizing: border-box;
+    line-height: 45px !important;
+    flex: 1 auto;
+    min-width: 0px;
+    padding-left: 50px;
+    padding-right: 5px;
+  }
+  #melContent #coverHeader .ivpCovertitleWrapper .ivpLogo {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  #melContent #coverHeader .ivpCovertitleWrapper .ivpTitle {
+    width: 100%;
+    text-align: center;
+  }
+}
+#melContent #coverHeader .ivpCovertitleWrapper .ivpTitle h1 {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 24px !important;
+  line-height: 1.3 !important;
+  margin-top: 5px;
+}
+@media (max-width: 992px) {
+  #melContent #coverHeader .ivpCovertitleWrapper .ivpTitle h1 {
+    font-size: 14px !important;
+    width: 100%;
+    text-align: center;
+    line-height: 45px !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+#melContent #coverHeader #closeCover {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  padding: 0;
+  width: 40px !important;
+  height: 40px;
+}
+@media (max-width: 992px) {
+  #melContent #coverHeader #closeCover {
+    left: 0;
+    top: 0;
+    width: 50px !important;
+    height: 45px;
+    overflow: hidden;
+  }
+}
+#melContent #coverHeader #closeCover .closeCoverImage {
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 0;
+}
+@media (max-width: 992px) {
+  #melContent #coverHeader #closeCover .closeCoverImage {
+    height: 45px;
+  }
+}
+#melContent #coverHeader #closeCover::before {
+  content: "❌";
+  width: 100%;
+  height: 40px;
+  font-size: 32px;
+  display: block;
+  text-decoration: none !important;
+}
+@media (max-width: 992px) {
+  #melContent #coverHeader #closeCover::before {
+    content: "‹";
+    color: white !important;
+    border: none !important;
+    text-align: center !important;
+    height: 45px !important;
+    font-size: 45px !important;
+    line-height: 45px !important;
+    background: #00264b;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+#melContent #coverHeader #closeCover:hover {
+  border: none !important;
+  background: none !important;
+  text-decoration: none !important;
+}
+#melContent #coverHeader #closeCover:hover::before {
+  text-shadow: 0px 0px 3px #4D4D4D;
+  text-decoration: none !important;
+}
+@media (max-width: 992px) {
+  #melContent #coverHeader #closeCover:hover::before {
+    background: #001A32 !important;
+    height: 45px !important;
+    border: none !important;
+    text-shadow: none !important;
+    -webkit-box-shadow: 0 0 0 0 white !important;
+    -moz-box-shadow: 0 0 0 0 white !important;
+    box-shadow: 0 0 0 0 white !important;
+  }
+}
+
+/*----------------------------------------------------------------------------------
+# UMSCHLAG NAVIGATION - COVERBUTTONS (Umschlag/Formular/Protokoll)
+----------------------------------------------------------------------------------*/
+/*
+	Die Buttons sind in der Standardansicht ein Tab-Menü a la Material,
+	in der mobilen Ansicht werden daraus Icons im Headerbereich
+*/
+#melContent .ivpCoverButtonsWrapper {
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+@media (max-width: 992px) {
+  #melContent .ivpCoverButtonsWrapper {
+    flex: 0 0 120px;
+    height: 45px;
+    display: block;
+    margin: 0;
+    color: white !important;
+  }
+}
+@media (max-width: 992px) {
+  #melContent .ivpCoverButtonsWrapper #coverButtons {
+    width: 100%;
+    padding: 0;
+    visibility: hidden;
+    font-size: 0px !important;
+  }
+}
+#melContent .ivpCoverButtonsWrapper #coverButtons .coverButton {
+  background: none !important;
+  color: black !important;
+  padding: 0 !important;
+  display: inline-block;
+}
+@media (max-width: 992px) {
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton {
+    margin: 0 !important;
+    border: none !important;
+    width: 40px;
+    visibility: visible;
+  }
+}
+#melContent .ivpCoverButtonsWrapper #coverButtons .coverButton.activeCoverButton, #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton:hover {
+  border-bottom: 2px solid #00436B;
+}
+#melContent .ivpCoverButtonsWrapper #coverButtons .coverButton a {
+  font-size: 16px !important;
+  color: black !important;
+  width: 100%;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 10px 30px !important;
+}
+@media (max-width: 992px) {
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton a {
+    visibility: hidden;
+    border: none !important;
+    height: 45px;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+  }
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton a::before {
+    color: white !important;
+    visibility: visible;
+    width: 40px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    display: inline-block;
+    font-size: 28px;
+  }
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton a::after {
+    width: 200px;
+    height: 25px;
+    margin: 0;
+    padding: 0 10px;
+    line-height: 25px;
+    background: #E8EEF1;
+    color: black;
+    border: 1px solid black;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    display: none;
+    z-index: 15;
+    text-align: center;
+    text-transform: none;
+    visibility: visible !important;
+  }
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton a[accesskey=u]::before {
+    content: "🏠";
+  }
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton a[accesskey=u]::after {
+    content: "Umschlag";
+  }
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton a[accesskey=f]::before {
+    content: "📝";
+  }
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton a[accesskey=f]::after {
+    content: "Formular";
+  }
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton a[accesskey=a]::before {
+    content: "📑";
+  }
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton a[accesskey=a]::after {
+    content: "Änderungsprotokoll";
+  }
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton a:hover {
+    color: white !important;
+    border: none !important;
+  }
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton a:hover::before {
+    background: #00436a;
+  }
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton a:hover::after {
+    display: block;
+  }
+}
+#melContent .ivpCoverButtonsWrapper #coverButtons .coverButton.activeCoverButton a {
+  font-weight: bold;
+  color: black !important;
+}
+@media (max-width: 992px) {
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton.activeCoverButton a {
+    color: white !important;
+    font-weight: normal;
+    border: none !important;
+  }
+  #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton.activeCoverButton a::before {
+    background: #00436a;
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# FORMULAR - MELDUNGSEIGENSCHAFTEN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* fix für Umschlagbuttons in den Eigenschaften (Speichern soll primary sein) */
+#petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection {
+  /* buttonSection wird in umschlag.scss definiert, aber kein abweichendes Parent im Umschlag zu PetitionProperties, daher hier override */
+  position: static;
+  text-align: left;
+  -webkit-box-shadow: 0 0 0 0 white !important;
+  -moz-box-shadow: 0 0 0 0 white !important;
+  box-shadow: 0 0 0 0 white !important;
+}
+/* Inputs Präfix und Titel */
+.propertiesFields {
+  margin-top: 40px;
+  /* @hax */
+}
+.propertiesFields .inputContainer {
+  margin-bottom: 20px;
+}
+.propertiesFields .inputContainer .widgetContainer {
+  position: relative;
+}
+.propertiesFields .inputContainer .widgetContainer::before {
+  position: absolute;
+  color: white;
+  background: #4D4D4D;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  visibility: hidden;
+  border-radius: 2px;
+  padding: 5px;
+  content: "";
+  font-size: 11px !important;
+  width: 200px;
+}
+.propertiesFields .inputContainer .widgetContainer::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  width: 0;
+  height: 0;
+  border-right: 8px solid #4D4D4D;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  visibility: hidden;
+}
+.propertiesFields .inputContainer .widgetContainer:hover::before, .propertiesFields .inputContainer .widgetContainer:hover::after {
+  visibility: visible;
+}
+.propertiesFields .inputContainer .widgetContainer::before {
+  left: calc(101% + 8px);
+  top: 5px;
+}
+.propertiesFields .inputContainer .widgetContainer::after {
+  left: 101%;
+}
+.propertiesFields div:nth-of-type(1) .widgetContainer::before {
+  content: "z.B. Kundennummer";
+}
+.propertiesFields div:nth-of-type(2) .widgetContainer::before {
+  content: "z.B. Name des Kunden";
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# UMSCHLAG
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#petitionCover.petitionBorder {
+  padding: 5px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  border: none !important;
+  font-size: 14px !important;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 400px auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /*----------------------------------------------------------------------------------
+  # FORMULARUMSCHLAG - MELDUNGSSTATUS
+  ----------------------------------------------------------------------------------*/
+  /*----------------------------------------------------------------------------------
+  # FORMULARUMSCHLAG - VORBEFÜLLUNG
+  ----------------------------------------------------------------------------------*/
+  /*----------------------------------------------------------------------------------
+  # FORMULARUMSCHLAG - UMSCHLAGSTEXT
+  ----------------------------------------------------------------------------------*/
+  /*----------------------------------------------------------------------------------
+  # FORMULARUMSCHLAG - STYLES FÜR ALLE
+  ----------------------------------------------------------------------------------*/
+  /*----------------------------------------------------------------------------------
+  # BUTTONS UNTEN (Weiter zum Formular, Meldungseigenschaften)
+  ----------------------------------------------------------------------------------*/
+}
+@media (max-width: 992px) {
+  #petitionCover.petitionBorder {
+    display: block;
+  }
+}
+#petitionCover.petitionBorder #section1 {
+  margin: 20px 0 !important;
+  padding: 10px 0;
+  display: block;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  text-align: left;
+  background: #F2F2F2;
+  -webkit-box-shadow: 0px 0px 5px 1px #4D4D4D !important;
+  -moz-box-shadow: 0px 0px 5px 1px #4D4D4D !important;
+  box-shadow: 0px 0px 5px 1px #4D4D4D !important;
+}
+@media (max-width: 992px) {
+  #petitionCover.petitionBorder #section1 {
+    width: 100%;
+    padding: 0 !important;
+  }
+}
+#petitionCover.petitionBorder #section1 .petitionProperties {
+  display: block;
+  line-height: 1.1 !important;
+  width: 100%;
+  margin: 0 10px;
+}
+#petitionCover.petitionBorder #section1 .petitionProperties .outputLabel {
+  text-align: left;
+  width: 30%;
+  font-weight: bold;
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration {
+  display: block;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  padding: 15px;
+  /*----------------------------------------------------------------------------------
+  # CHECKBOXEN VORBEFÜLLUNG
+  (kopiert aus einem Codepen)
+  ----------------------------------------------------------------------------------*/
+}
+@media (max-width: 992px) {
+  #petitionCover.petitionBorder #sectionPrefillDeclaration {
+    width: 100%;
+    padding: 0 !important;
+  }
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration p {
+  margin-bottom: 10px;
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration form {
+  padding-bottom: 20px;
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:not(:checked),
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:checked {
+  position: absolute;
+  left: -9999px;
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:not(:checked) + label,
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:not(:checked) + label:before,
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:checked + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px solid #ccc;
+  background: #00436B;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 3px #F2F2F2 !important;
+  -moz-box-shadow: inset 0 1px 3px #F2F2F2 !important;
+  box-shadow: inset 0 1px 3px #F2F2F2 !important;
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:not(:checked) + label:before {
+  background: white;
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:not(:checked) + label:after,
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:checked + label:after {
+  content: "✓ ";
+  position: absolute;
+  top: 0.15em;
+  left: 0.22em;
+  font-size: 1.35em;
+  line-height: 0.8;
+  color: white;
+  transition: all 0.2s;
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:disabled:not(:checked) + label:before,
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:disabled:checked + label:after {
+  color: #4D4D4D;
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:disabled + label {
+  color: #4D4D4D;
+  cursor: not-allowed;
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:checked:focus + label:before,
+#petitionCover.petitionBorder #sectionPrefillDeclaration [type=checkbox]:not(:checked):focus + label:before {
+  border: 1px dotted #80A1B4;
+}
+#petitionCover.petitionBorder #sectionPrefillDeclaration ul.prefillDeclarationList [type=checkbox]:not(:disabled) + label:hover:before {
+  border: 2px solid #80A1B4 !important;
+}
+#petitionCover.petitionBorder .section2 {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 2;
+  margin-top: 20px;
+  border-top: 1px solid #4D4D4D;
+  padding-top: 10px;
+}
+#petitionCover.petitionBorder .section1_2 p, #petitionCover.petitionBorder .section2 p, #petitionCover.petitionBorder .section2 div {
+  line-height: 1.5;
+  text-align: justify;
+}
+#petitionCover.petitionBorder .section1_2 p a, #petitionCover.petitionBorder .section2 p a, #petitionCover.petitionBorder .section2 div a {
+  color: #00436a;
+}
+#petitionCover.petitionBorder .section1_2 p a:hover, #petitionCover.petitionBorder .section2 p a:hover, #petitionCover.petitionBorder .section2 div a:hover {
+  color: #001A32;
+}
+#petitionCover.petitionBorder .titleSection2 {
+  font-size: 16px !important;
+  line-height: 1.1 !important;
+}
+#petitionCover.petitionBorder ul.prefillDeclarationList {
+  padding-left: 5px;
+}
+#petitionCover.petitionBorder #buttonSection {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: white;
+  width: 100%;
+  text-align: center;
+  z-index: 999;
+  -webkit-box-shadow: 0px -2px 4px 1px #4D4D4D !important;
+  -moz-box-shadow: 0px -2px 4px 1px #4D4D4D !important;
+  box-shadow: 0px -2px 4px 1px #4D4D4D !important;
+}
+@media (max-width: 767px) {
+  #petitionCover.petitionBorder #buttonSection input {
+    margin-bottom: 5px !important;
+  }
+}
+
+/*# sourceMappingURL=mel.css.map */

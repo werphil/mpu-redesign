@@ -1,0 +1,32 @@
+/*----------------------------------------------------------------------------------
+# NEUE MELDUNGEN / FORMULARSAMMLUNGEN MENÜ
+----------------------------------------------------------------------------------*/
+.melListPetitionsFormEntry {
+	@extend %petition;
+	padding: 20px !important;
+
+	.ivpName {
+		font-size: fontsize(title);
+		font-weight: 500 !important;
+		line-height: 1.2;
+	}
+
+	a {
+		background-color: color(primary, dark) !important;
+		color: white !important;
+		border: none;
+		height: 35px;
+		padding: 0 10px !important;
+		line-height: 35px;
+		font-size: fontsize(body);
+		display: inline-block;
+		margin-top: 10px !important;
+		font-weight: normal;
+
+		&:hover {
+			background-color: color(hover, dark);
+			@include box-shadow(0px, 0px, 4px, 1px, color(hover, dark));
+			color: white;
+		}
+	}
+}

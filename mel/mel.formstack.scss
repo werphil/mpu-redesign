@@ -1,0 +1,182 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# FORMULARSAMMLUNGEN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.petitionTable td.petitionCellFormStack {
+
+	@extend %petition;
+	padding: 0 !important;
+	border: 1px solid color(grey, dark) !important;
+
+	&:hover {
+		border: 1px solid color(support, dark) !important;
+	}
+
+	> .petitionHeader {
+		background: color(grey, light);
+		padding: 15px;
+		border: none !important;
+		font-size: fontsize(title);
+		font-weight: 500 !important;
+	}
+
+	.petitionAttributes {
+		margin: 15px !important;
+
+		@include respond-to(sm) {
+			> div {
+				display: block;
+				width: 100%;
+				text-align: left;
+			}
+
+			.leftColumn {
+				width: 60%;
+			}
+			// Bearbeiter ausblenden
+			.centerColumn:nth-of-type(2) {
+				display: none;
+			}
+		}
+	}
+
+/*----------------------------------------------------------------------------------
+# BUTTONS
+----------------------------------------------------------------------------------*/
+	.formStackActionButtons {
+		top: 10px;
+		right: 5px;
+		position: absolute;
+
+		.melActionButton {
+			@extend %button;
+		}
+
+		@include respond-to(sm) {
+			position: static;
+            display: block;
+            text-align: left;
+		}
+	}
+
+
+	// LAYOUT
+	.ui-widget-content {
+		border: none;
+	}
+
+	tr, td {
+		background: none !important;
+		border: none !important;
+	}
+	td {
+		padding: 20px !important;
+	}
+
+
+
+/*----------------------------------------------------------------------------------
+# ENTHALTENE PETITIONS
+----------------------------------------------------------------------------------*/
+	table.ui-datagrid-data {
+
+		border: none;
+		box-shadow: none;
+		border-collapse: separate; /* @layout */
+		border-spacing: 0 5px;
+		margin-left: 10px;
+
+		@include respond-to(sm) {
+			margin-left: 2px;
+		}
+
+		.petitionHeader {
+			font-size: fontsize(lead);
+			font-weight: normal !important;
+		}
+
+		.ui-datagrid-column {
+			border: none;
+			padding: 5px !important;
+			padding-left: 80px !important; // Platz für Nummerierung
+			
+			&:hover {
+				@extend %petition-hover;
+			}
+		}
+
+/*----------------------------------------------------------------------------------
+# PROZESSANSICHT MIT NUMMERIERUNG
+evtl. wieder weg falls Formularsammlungen ohne Reihenfolge
+----------------------------------------------------------------------------------*/
+		%nummerierung {
+			@extend %vertical-centered;
+			@include circle(48px);
+
+			content: counter(rowNumber);
+			position: absolute;
+			left: 20px;
+			font-size: fontsize(title);
+			color: color(white);
+			z-index: 99;
+		}
+
+		.ui-datagrid-content {
+			margin-right: 50px !important;
+			padding-bottom: 20px;
+		}
+
+		.ui-datagrid-row {
+			border: none;
+			box-shadow: none;
+			counter-increment: rowNumber;
+			position: relative;
+		} 
+
+		// Nummer
+		td::before {
+			@extend %nummerierung;
+			background: color(primary, light);
+		}
+		td:hover::before {
+			@include box-shadow(0px, 0px, 3px, 1px, color(grey, dark));
+		}
+
+		// Linie
+		td::after {
+			position: absolute;
+			left: 43px;
+			top: 0;
+			width: 2px;
+			background: color(primary, light);
+			height: 110%;
+			content: "";
+		}
+		tr:first-child td::after {
+			top: 50%;
+			height: 60%;
+		}
+		tr:last-child td::after {
+			height: 50%;
+		}
+
+/*----------------------------------------------------------------------------------
+# ERLEDIGT MARKIERTE MELDUNGEN
+----------------------------------------------------------------------------------*/
+		.markedAsDone {
+			background: none;
+
+			// Nummerierung ausgrauen
+			&::before {
+				@extend %nummerierung;
+				background: color(grey, dark);
+				z-index: 100;
+			}
+
+			input[value=Ansehen] {
+				background: color(grey, dark) !important;
+			}
+		}
+
+	}
+}

@@ -1,0 +1,153 @@
+/*----------------------------------------------------------------------------------
+# UMSCHLAG NAVIGATION - COVERBUTTONS (Umschlag/Formular/Protokoll)
+----------------------------------------------------------------------------------*/
+/*
+	Die Buttons sind in der Standardansicht ein Tab-Menü a la Material,
+	in der mobilen Ansicht werden daraus Icons im Headerbereich
+*/
+#melContent .ivpCoverButtonsWrapper {
+	text-align: left;
+	margin-top: 10px;
+	margin-bottom: 15px;
+
+	@include respond-to(md) {
+		flex: 0 0 (3 * $navIconWidth);
+		height: $headerHeight;
+		display: block;
+		margin: 0;
+		color: color(white) !important;
+	}
+
+	#coverButtons {
+
+		@include respond-to(md) {
+			width: 100%;
+			padding: 0;
+			visibility: hidden;
+			font-size: 0px !important; //fix um kugerl zu entfernen
+		}
+
+		.coverButton {
+			background: none !important;
+			color: color(black) !important;
+			padding: 0 !important;
+			display: inline-block;
+
+			@include respond-to(md) {
+				margin: 0 !important;
+				border: none !important;
+				width: $navIconWidth;
+				visibility: visible;
+			}
+
+			&.activeCoverButton, &:hover {
+				border-bottom: 2px solid color(hover, light);
+			}
+
+			a {
+				font-size: fontsize(lead);
+				color: color(black) !important;
+				width: 100%;
+				text-transform: uppercase;
+				display: inline-block;
+				padding: 10px 30px !important;
+
+				@include respond-to(md) {
+					visibility: hidden;
+					border: none !important;
+					height: $headerHeight;
+					padding: 0 !important;
+					margin: 0 !important;
+					position: relative;
+
+// ICONS mit TOOLTIPS STATT BUTTONS
+// ----------------------------------------------------------------------------------
+					// @hax
+					&::before {
+						color: color(white) !important;
+						visibility: visible;
+						width: $navIconWidth;
+						height: $headerHeight;
+						line-height: $headerHeight;
+						text-align: center;
+						display: inline-block;
+						font-size: 28px;
+					}
+
+					&::after {
+						width: 200px;
+						height: 25px;
+						margin: 0;
+						padding: 0 10px;
+						line-height: 25px;
+						background: color(support, light);
+						color: color(black);
+						border: 1px solid color(black);
+						position: absolute;
+						top: $headerHeight;
+						right: 0;
+						display: none;
+						z-index: 15;
+						text-align: center;
+						text-transform: none;
+						visibility: visible !important;
+					}
+				
+					&[accesskey="u"] {
+						&::before {
+							content: "\1F3E0";
+						}
+						&::after {
+							content: "Umschlag";
+						}
+					}
+					&[accesskey="f"] {
+						&::before {
+							content: "\1F4DD";
+						}
+						&::after {
+							content: "Formular";
+						}
+					}
+					&[accesskey="a"] {
+						&::before {
+							content: "\1F4D1";
+						}
+						&::after {
+							content: "Änderungsprotokoll";
+						}
+					}
+
+					&:hover {
+						color: color(white) !important;
+						border: none !important;
+
+						&::before {
+							background: color(primary, light);
+						}
+						&::after {
+							display: block;
+						}
+					}
+				}
+			}
+			&.activeCoverButton a {
+				font-weight: bold;
+				color: color(black) !important;
+
+				@include respond-to(md) {
+					color: color(white) !important;
+					font-weight: normal;
+					border: none !important;
+
+					&::before {
+						background: color(primary, light);
+					}
+				}
+			}
+		}
+	}
+
+
+	
+}

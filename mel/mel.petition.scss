@@ -1,0 +1,61 @@
+
+/*----------------------------------------------------------------------------------
+# PETITIONS
+----------------------------------------------------------------------------------*/
+
+%petition {
+	padding-bottom: 5px;
+	padding-right: 10px;
+	padding-left: 20px;
+	margin-bottom: 20px !important;
+	font-family: $font;
+	background: none !important;
+	border: none !important;
+	position: relative;
+	@include box-shadow(1px, 1px, 2px, 1px, color(grey, dark));
+
+	&:hover {
+		@include box-shadow(1px, 1px, 2px, 1px, color(primary, light));
+	}
+}
+
+%petition-hover {
+	background: -moz-linear-gradient(top, rgba(242,242,242,0.65) 0%, rgba(242,242,242,0) 100%) !important; /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(242,242,242,0.65) 0%,rgba(242,242,242,0) 100%) !important;; /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(242,242,242,0.65) 0%,rgba(242,242,242,0) 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6f2f2f2', endColorstr='#00f2f2f2',GradientType=0 ) !important; /* IE6-9 */
+}
+
+
+
+.petitionTable {
+	tr.ui-datatable-odd {
+		background: none;
+	}
+
+	.petitionCell {
+		@extend %petition;
+
+		&:hover {
+			@extend %petition-hover;
+		}
+
+		.petitionHeader {
+			font-size: fontsize(title);
+			font-weight: 500 !important;
+
+			@include respond-to(sm) {
+				font-size: fontsize(lead);
+			}
+			
+			.hintText {
+				font-size: fontsize(body);
+			}
+		}
+	}
+
+	.petitionAttributes .fourColLayout {
+		font-size: fontsize(hint);
+		margin-bottom: 8px !important;
+	}
+}

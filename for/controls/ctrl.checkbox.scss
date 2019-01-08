@@ -1,0 +1,169 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# CHECKBOXEN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+%label_default {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    font-size: fontsize(body);
+    font-family: $font;
+}
+
+%cb_default {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: color(white);
+    border: 1px solid color(primary, light);
+}
+
+%cb_hover {
+    background: color(hover, light);
+}
+
+%cb_focus {
+    @include box-shadow(0, 0, 0, 3px, color(grey, light));
+}
+%cb_checked {
+    background: color(primary, light);
+}
+
+%cb_label_disabled {
+    color: color(grey, dark);
+    cursor: auto;
+}
+
+%cb_box_disabled {
+    @include box-shadow(0,0,0,0,white);
+    background: color(grey, light);
+}
+
+%cb_hakerl {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: color(white);
+    width: 2px;
+    height: 2px;
+    box-shadow: 
+        2px 0 0 white,
+        4px 0 0 white,
+        4px -2px 0 white,
+        4px -4px 0 white,
+        4px -6px 0 white,
+        4px -8px 0 white;
+    @include transform(rotate(45deg));
+}
+
+.xfControl.xsdBoolean {
+    position: relative;
+
+    .widgetContainer {
+                
+        input[type="checkbox"] {
+            @include transform(scale(1.5));
+            /*position: absolute;
+            opacity: 0; 
+            // @todo: Hier fehlt ein Container-Element für before
+            & + div::before {
+                @extend %cb_default;
+            }
+        
+            &:hover + div::before {
+                @extend %cb_hover;
+            }
+            &:checked + div::before {
+                @extend %cb_checked;
+            }
+            
+            // Disabled state label.
+            &:disabled + div {
+                @extend %cb_label_disabled;
+            }
+        
+            // Disabled box.
+            &:disabled + div:before {
+                @extend %cb_box_disabled;
+            }
+        
+            // Checkmark. Could be replaced with an image
+            &:checked + div:after {
+                @extend %cb_hakerl;
+            }*/
+        }
+
+        // Extra-Handling für Hilfetext
+        .bfHelpText {
+            position: relative;
+            left: 40px;
+            top: 0;
+            margin-top: 0 !important;
+            margin-bottom: 10px !important;
+        }
+    }
+    .labelContainer {
+        position: absolute;
+        top: 0;
+        left: 40px;
+
+        label {
+            @extend %label_default;
+        }
+    }
+}
+
+// Auswahlgruppen
+.xfControl.xfSelect {
+    div.widgetContainer {
+        width: 100% !important;
+    }
+
+    .bfCheckBoxGroup .xfItemset .xfSelectorItem .xfCheckBoxValue {
+        position: absolute; // take it out of document flow
+        opacity: 0; // hide it
+    
+        & + label {
+            @extend %label_default;
+        }
+    
+        // Box.
+        & + label:before {
+            @extend %cb_default;
+        }
+    
+        // Box hover
+        &:hover + label:before {
+            @extend %cb_hover;
+        }
+        
+        // Box focus
+        &:focus + label:before {
+            @extend %cb_focus;
+        }
+    
+        // Box checked
+        &:checked + label:before {
+            @extend %cb_checked;
+        }
+        
+        // Disabled state label.
+        &:disabled + label {
+            @extend %cb_label_disabled;
+        }
+    
+        // Disabled box.
+        &:disabled + label:before {
+            @extend %cb_box_disabled;
+        }
+    
+        // Checkmark. Could be replaced with an image
+        &:checked + label:after {
+            @extend %cb_hakerl;
+        }
+    }
+  }

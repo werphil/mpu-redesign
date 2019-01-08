@@ -1,0 +1,124 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# FORMULAR - GRÜNES I
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+%helptext {
+	position: relative !important;
+	top: 0;
+	left: 0;
+	display: block !important;
+	color: color(grey, dark);
+	background: none;
+	border: none !important;
+	border-radius: 0 !important;
+
+	width: auto;
+	max-width: 90%;
+	height: 20px;
+	overflow: hidden;
+
+	margin-right: 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+	padding: 0;
+
+	font-family: $font;
+	font-size: fontsize(hint);
+	font-weight: normal;
+	line-height: 1.1;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+	@include transition(all, 0.5s, ease-in-out);
+	// @hax
+	&::before {
+		@include circle(16px);
+		content: "i";
+		border: 1px solid color(grey, dark);
+		display: inline-block;
+		margin-right: 10px;
+		cursor: pointer;
+		@include transition(width, 0.5s, ease-in-out);
+	}
+
+	&::after {
+		content: "Vergrößern";
+		text-transform: uppercase;
+		background: color(primary, light);
+		color: color(white);
+		position: absolute;
+		display: none;
+		font-size: fontsize(hint);
+		top: 0;
+		right: 0;
+		height: 20px;
+		line-height: 20px;
+		padding: 0 10px;
+		z-index: 9;
+		cursor: pointer;
+	}
+
+	&:hover {
+		&::before {
+			background: color(primary, light);
+			color: color(white);
+		}
+		&::after {
+			display: block;
+		}
+	}
+
+	&:active, &:focus {
+		
+		font-size: fontsize(body);
+		padding: 20px 10px;
+		padding-left: 40px;
+		overflow: visible;
+		white-space: normal;
+		position: absolute;
+		height: auto;
+		border: 1px solid color(support, dark) !important;
+		border-radius: 0;
+		color: color(black);
+		
+
+		&::before {
+			@include circle(28px);
+			border: none;
+			background: color(primary, light);
+			color: color(white);
+			position: absolute;
+			left: 5px;
+			top: 0;
+			bottom: 0;
+			margin: auto 0;
+		}
+		&::after {
+			display: none;
+			/*
+			@include circle(26px);
+			content: "x";
+			padding: 0;
+			top: -10px;
+			right: -10px;
+			*/
+		}
+	}
+}
+
+.helptextContainer {
+	img.hintIcon {
+		display: none;
+	}
+
+	.helpText {
+		@extend %helptext;
+	}
+}
+
+.bfHelpText {
+	@extend %helptext;
+}
+
+

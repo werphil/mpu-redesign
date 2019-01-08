@@ -1,0 +1,93 @@
+/*----------------------------------------------------------------------------------
+# REPEATS
+----------------------------------------------------------------------------------*/
+.xfGroup.repeatContainer {
+
+	.xfGroupLabel {
+		@extend %default;
+		font-size: fontsize(h2);
+	}
+
+	.fullExpandableRepeatButtons {
+		margin-top: 10px;
+
+		button {
+			@extend %primarybutton;
+
+			&::before {
+				@include circle(18px);
+				border: 1px solid color(white);
+				color: color(white);
+				content: "+";
+				margin-right: 5px;
+			}
+		}
+	}
+
+	.xfRepeat {
+		@extend %default;
+		
+
+		.xfRepeatItem {
+			padding: 0 !important;
+			margin-bottom: 15px;
+			@include box-shadow(1px, 1px, 3px, 1px, color(grey, dark));
+		}
+		
+		.fullExpandableRepeatHeader {
+			@extend %default;
+			margin: 0 !important;
+			background: color(grey, light) !important;
+			height: 50px;
+			line-height: 50px !important;
+			position: relative;
+			overflow: hidden;
+
+			.repeatHeaderLabel {
+				padding: 0 !important;
+				margin-left: 20px !important;
+				background: none !important;
+			}
+			
+			.readOnlyOutputText {
+				margin-left: 15px;
+				font-family: $font;
+				font-size: fontsize(title);
+				background: none !important;
+			}
+
+			.repeatButton {
+				overflow: hidden;
+				background: none !important;
+				padding-right: 5px;
+				line-height: 50px !important;
+				display: inline-block;
+
+				button {
+					@extend %cancelbutton;
+				}
+			}
+
+			.expCollapseButton {
+				line-height: 50px;
+				width: calc(100% - 100px);
+				height: 100%;
+				padding-left: 10px;
+				position: absolute;
+				text-align: left;
+				top: 0;
+				left: 0;
+
+				img {
+					height: 14px;
+				}
+			}
+		}
+
+		.fullExpandableRepeatBody {
+			@extend %default;
+			padding: 10px !important;
+		
+		}
+	}
+}

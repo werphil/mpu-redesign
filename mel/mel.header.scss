@@ -1,0 +1,122 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# HEADER DER MELDUNGSABLAGE inkl. HEADERBUTTONS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*----------------------------------------------------------------------------------
+# HEADER IN DER MELDUNGSLISTE
+----------------------------------------------------------------------------------*/
+#melContent .headerWrapper {
+
+	.contentHeader {
+
+		margin-top: 20px;
+
+		@include respond-to(md) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 90;
+			line-height: $headerHeight;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			@extend %default;
+			font-size: fontsize(h1);
+			line-height: 1.1;
+			color: color(primary, dark) !important;
+			width: 100%;
+
+			@include respond-to(md) {
+				color: color(white) !important;
+				font-weight: bold !important;
+				font-size: fontsize(lead);
+				margin: 0;
+				padding: 0;
+				margin-left: 10px;
+				line-height: $headerHeight;
+			}
+		}
+
+	}
+	.contentHeaderButtonBox {
+
+		@include respond-to(md) {
+			position: absolute;
+			top: 0;
+			right: 5px;
+			margin: 0;
+			padding: 0;
+			z-index: 90;
+			width: 40px;
+			height: $headerHeight;
+			text-align: right;
+			color: color(white) !important;
+			font-size: 18px !important;
+			visibility: visible;
+			display: block;
+			cursor: pointer;
+
+			&::before {
+				content: "\2630";
+				color: color(white) !important;
+				width: 100%;
+				height: 100%;
+				font-size: 32px;
+				line-height: $headerHeight;
+				text-align: center;
+			}
+			&:hover {
+				width: 300px;
+				color: color(white) !important;
+				form {
+					display: block;
+				}
+			}
+		}
+
+		form {
+
+			@include respond-to(md) {
+				display: none;
+				background: color(white);
+				width: 300px;
+				@include box-shadow(0px, 2px, 3px, 1px, color(grey, dark));
+			}
+
+			.melActionButton.headerButton {
+			
+				@extend %button;
+				font-size: fontsize(lead);
+				padding: 20px !important;
+
+				@include respond-to(md) {
+				
+					text-transform: none;
+					border: none !important;
+					display: block !important;
+					width: 100%;
+					margin: 0;
+
+					&:hover {
+						background: color(primary, light) !important;
+						color: color(white) !important;
+						@include box-shadow(0,0,0,0,white);
+					}
+				}
+			}
+		}
+	}
+}
+
+/*----------------------------------------------------------------------------------
+# MOBILE ANSICHT
+----------------------------------------------------------------------------------*/
+#header {
+	@extend %mobileHeader;
+
+	#melHeader img {
+		display: none;
+	}
+}

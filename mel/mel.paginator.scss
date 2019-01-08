@@ -1,0 +1,26 @@
+/*----------------------------------------------------------------------------------
+# PAGINATOR
+----------------------------------------------------------------------------------*/
+.ui-paginator {
+	background: none;
+	border: none;
+	font-size: fontsize(body);
+
+	.ui-state-default {
+		background: none;
+		border-radius: 0;
+		padding: 10px;
+	}
+
+	.ui-state-default .ui-icon {
+		@include transform(scale(1.4));
+	}
+
+	.ui-state-hover {
+		@include box-shadow(0px, 0px, 2px, 1px, color(support, light));
+	}
+}
+
+.petitionTable .ui-paginator-bottom {
+	border: none;
+}

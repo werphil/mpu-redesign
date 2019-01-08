@@ -1,0 +1,47 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ERRORS INLINE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.xfInput.xfInvalid {
+
+	.xfLabel {
+		color: color(danger) !important;
+	}
+
+	.labelContainer .invalidInput {
+		display: none;
+	}
+
+	input[type=text], select {
+		border-bottom: 2px solid color(danger) !important;
+	}
+
+	.xfAlert {
+		display: block !important;
+		background: color(white);
+		padding: 0;
+		margin: 0;
+		width: 100% !important;
+		max-width: 100% !important;
+
+		font-family: $font;
+		font-size: fontsize(body);
+		line-height: 1.2;
+
+		.closeAlertIcon {
+			display: none;
+		}
+		.bfAlertMsg {
+			display: block !important;
+			font-weight: normal;
+			margin-left: 25px;
+			width: 100% !important;
+			box-sizing: border-box;
+		}
+		
+		&::before {
+			@extend %errorIcon;
+			display: block;
+			float: left;
+		}
+	}
+}

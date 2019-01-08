@@ -1,0 +1,96 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# FEHLERBOX OBEN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#errorBox {
+	background: color(white) !important;
+	color: color(danger) !important;
+	border: 1px solid color(danger);
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+	position: relative;
+	
+	&::before {
+		content: "Im Formular gibt es ungültige Eingaben.";
+	}
+
+	&::after {
+		text-transform: uppercase;
+		color: color(danger);
+		content: "Fehlerliste anzeigen";
+		float: right;
+	}
+
+	> * {
+		display: none;
+	}
+
+	&:hover {
+		padding: 25px 10px;
+		@include box-shadow(2px, 0px, 3px, 1px, color(danger));
+
+		&::before {
+			display: none;
+		}
+		&::after {
+			display: none;
+		}
+
+		> * {
+			display: block;
+		}
+	}
+
+	.errorHeadline {
+		font-size: fontsize(lead);
+		font-weight: normal;
+		padding: 0 !important;
+		color: color(danger);
+	}
+	.errorBoxEntry {
+		line-height: 16px;
+		width: 100%;
+		box-sizing: border-box;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		&:hover {
+			white-space: normal;
+		}
+
+		> div {
+			display: inline;
+		}
+		&:first-child {
+			margin-bottom: 15px;
+		}
+
+		&:not(:first-child) {
+
+			margin-bottom: 10px;
+			
+			&::before {
+				@extend %errorIcon;
+				margin: 0;
+				margin-right: 5px;
+				display: inline;
+			}
+
+			a {
+				text-decoration: none;
+				padding: 0 !important;
+				color: color(danger) !important;
+				font-size: fontsize(body);
+				line-height: 1.1;
+				font-weight: normal;
+				display: inline;
+
+				&:hover {
+					color: color(red) !important;
+				}
+			}
+		}
+	}
+}

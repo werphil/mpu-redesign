@@ -1,0 +1,1528 @@
+@charset "UTF-8";
+/* @change: Font als lokale Ressource */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+/* FARBEN
+------------------------------------------------------------------------------------*/
+/* FONTS
+------------------------------------------------------------------------------------*/
+/* RESPONSIVENESS
+------------------------------------------------------------------------------------*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# MIXINS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# STANDARDKLASSEN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*----------------------------------------------------------------------------------
+# Setzt alle Eigenschaften auf Standard
+----------------------------------------------------------------------------------*/
+.xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatBody, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader, .xfGroup.repeatContainer .xfRepeat, .xfGroup.repeatContainer .xfGroupLabel, .xfControl.xsdDate .widgetContainer .dijit.xfValue, .xfInput input[type=text], .xfControl select, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner, .xfUpload.xfControl .labelContainer label::before, .formWrapper form .buttons input, .formWrapper form .buttons button, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button, .formWrapper form .buttons #cancel button, .xfGroup.repeatContainer .fullExpandableRepeatButtons button, .formWrapper form .buttons #next button {
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  line-height: 1;
+  border: none !important;
+  color: black;
+  text-shadow: none !important;
+  background: none !important;
+}
+
+.xfInput input[type=text], .xfControl select, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner, .xfUpload.xfControl .labelContainer label::before, .formWrapper form .buttons input, .formWrapper form .buttons button, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button, .formWrapper form .buttons #cancel button, .xfGroup.repeatContainer .fullExpandableRepeatButtons button, .formWrapper form .buttons #next button {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/*----------------------------------------------------------------------------------
+# BUTTONS
+----------------------------------------------------------------------------------*/
+.xfUpload.xfControl .labelContainer label::before, .formWrapper form .buttons input, .formWrapper form .buttons button, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button, .formWrapper form .buttons #cancel button, .xfGroup.repeatContainer .fullExpandableRepeatButtons button, .formWrapper form .buttons #next button {
+  display: inline-block !important;
+  height: auto !important;
+  padding: 10px !important;
+  color: black !important;
+  border: 1px solid black !important;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+.xfUpload.xfControl .labelContainer label:hover::before, .formWrapper form .buttons input:hover, .formWrapper form .buttons button:hover, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button:hover, .formWrapper form .buttons #cancel button:hover, .xfGroup.repeatContainer .fullExpandableRepeatButtons button:hover, .formWrapper form .buttons #next button:hover, .xfUpload.xfControl .labelContainer label:active::before, .formWrapper form .buttons input:active, .formWrapper form .buttons button:active, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button:active, .formWrapper form .buttons #cancel button:active, .xfGroup.repeatContainer .fullExpandableRepeatButtons button:active, .formWrapper form .buttons #next button:active {
+  -webkit-box-shadow: 0px 0px 5px 0px #4D4D4D !important;
+  -moz-box-shadow: 0px 0px 5px 0px #4D4D4D !important;
+  box-shadow: 0px 0px 5px 0px #4D4D4D !important;
+}
+
+.xfGroup.repeatContainer .fullExpandableRepeatButtons button, .formWrapper form .buttons #next button {
+  background: #00264b !important;
+  color: white !important;
+}
+.xfGroup.repeatContainer .fullExpandableRepeatButtons button:hover, .formWrapper form .buttons #next button:hover, .xfGroup.repeatContainer .fullExpandableRepeatButtons button:active, .formWrapper form .buttons #next button:active {
+  -webkit-box-shadow: 0px 0px 5px 0px #001A32 !important;
+  -moz-box-shadow: 0px 0px 5px 0px #001A32 !important;
+  box-shadow: 0px 0px 5px 0px #001A32 !important;
+}
+
+.xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button, .formWrapper form .buttons #cancel button {
+  border-color: #A82C10 !important;
+  color: #A82C10 !important;
+}
+.xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button:hover, .formWrapper form .buttons #cancel button:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px #A82C10 !important;
+  -moz-box-shadow: 0px 0px 5px 0px #A82C10 !important;
+  box-shadow: 0px 0px 5px 0px #A82C10 !important;
+}
+
+/*----------------------------------------------------------------------------------
+# CONTROLS
+----------------------------------------------------------------------------------*/
+.xfInput input[type=text], .xfControl select, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner {
+  border-bottom: 2px solid #00436a !important;
+}
+.xfInput input[type=text]:hover, .xfControl select:hover, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner:hover, .xfInput input[type=text]:active, .xfControl select:active, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner:active, .xfInput input[type=text]:focus, .xfControl select:focus, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner:focus {
+  background: none !important;
+}
+
+.xfInput input[type=text], .xfControl select, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner {
+  padding: 10px;
+  background: #F2F2F2 !important;
+}
+.xfInput input[type=text]:focus, .xfControl select:focus, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner:focus, .xfInput input[type=text]:active, .xfControl select:active, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner:active, .xfInput input[type=text]:hover, .xfControl select:hover, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner:hover {
+  border-bottom-color: #00436B !important;
+  background: #E8EEF1 !important;
+}
+.xfInput input[type=text]:focus, .xfControl select:focus, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner:focus, .xfInput input[type=text]:active, .xfControl select:active, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner:active {
+  border-bottom-color: #001A32 !important;
+  border-bottom-width: 3px !important;
+}
+
+/*----------------------------------------------------------------------------------
+# OEGV-STYLED HEADER
+----------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------
+# INFOS, ERRORS, ...
+----------------------------------------------------------------------------------*/
+.xfInput.xfInvalid .xfAlert::before, #errorBox .errorBoxEntry:not(:first-child)::before {
+  width: 18px !important;
+  height: 18px !important;
+  display: inline-block !important;
+  line-height: 18px !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  background: #DD300E;
+  color: white;
+  content: "!";
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# LAYOUT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+body {
+  font-family: "Open Sans", sans-serif !important;
+  overflow: hidden !important;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+/*----------------------------------------------------------------------------------
+# VARIABLEN
+----------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------
+# MAIN WRAPPERS
+----------------------------------------------------------------------------------*/
+.formWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 992px) {
+  .formWrapper {
+    padding-top: 0px !important;
+  }
+}
+.formWrapper form {
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-template-rows: auto 60px;
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+}
+@media (max-width: 992px) {
+  .formWrapper form {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}
+.formWrapper form #navigation {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  display: block;
+}
+@media (max-width: 992px) {
+  .formWrapper form #navigation {
+    width: 100%;
+    flex: 0 0 60px;
+  }
+}
+.formWrapper form .buttons {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+@media (max-width: 992px) {
+  .formWrapper form .buttons {
+    flex: 1 0 60px;
+    width: 100%;
+  }
+}
+.formWrapper form #formBorder {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  border: none;
+  background: none;
+  padding: 0 !important;
+  min-width: 0;
+  overflow: hidden;
+}
+@media (max-width: 992px) {
+  .formWrapper form #formBorder {
+    display: block;
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+.formWrapper form #formBorder .resizeableForm {
+  background: white;
+  width: 100%;
+  height: 100% !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.formWrapper form #formBorder .resizeableForm #formContent {
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.formWrapper form #formBorder .resizeableForm #formContent #formContentBody {
+  padding: 0 !important;
+  /*----------------------------------------------------------------------------------
+  # ZWEISPALTIGE LAYOUTS
+  ----------------------------------------------------------------------------------*/
+}
+@media (max-width: 992px) {
+  .formWrapper form #formBorder .resizeableForm #formContent #formContentBody {
+    margin-right: 10px;
+  }
+}
+.formWrapper form #formBorder .resizeableForm #formContent #formContentBody .keep-together {
+  display: flex;
+  flex-flow: row wrap;
+}
+.formWrapper form #formBorder .resizeableForm #formContent #formContentBody .keep-together > .xfControl {
+  flex: 1;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# FORMULAR - FORMULARSEITEN MENU
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#navigation .xfControl.activePageLink a, #navigation .xfControl a:hover {
+  background: white !important;
+  color: black !important;
+}
+
+#navigation {
+  position: static;
+  direction: rtl;
+  counter-reset: navi;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0 !important;
+  padding-left: 10px !important;
+  background: #E8EEF1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  /*----------------------------------------------------------------------------------
+  # NAVI HOVER
+  ----------------------------------------------------------------------------------*/
+  /*----------------------------------------------------------------------------------
+  # FORMULARSEITEN
+  ----------------------------------------------------------------------------------*/
+}
+@media (max-width: 992px) {
+  #navigation {
+    display: block;
+    direction: ltr;
+    overflow: hidden;
+  }
+}
+@media (max-width: 992px) {
+  #navigation:hover, #navigation:active {
+    height: 60%;
+    overflow-y: scroll;
+    position: absolute;
+    z-index: 99999;
+  }
+}
+#navigation:hover .xfControl a, #navigation:active .xfControl a {
+  width: auto;
+  white-space: normal;
+}
+#navigation::before {
+  direction: ltr;
+  content: "Formularnavigation";
+  font-weight: bold;
+  font-size: 1.2em;
+  width: 100%;
+  display: block;
+  height: 60px;
+  padding-left: 10px;
+  line-height: 60px;
+  margin-bottom: 15px;
+}
+@media (max-width: 992px) {
+  #navigation::before {
+    content: "⇅Aktuelle Seite:";
+    cursor: pointer;
+    margin: 0;
+  }
+}
+#navigation .xfControl {
+  direction: ltr;
+  padding: 0 !important;
+  margin: 3px 0 !important;
+  counter-increment: navi;
+  display: block;
+  width: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  /*----------------------------------------------------------------------------------
+  # AKTIVE SEITE
+  ----------------------------------------------------------------------------------*/
+  /*----------------------------------------------------------------------------------
+  # FEHLER ANZEIGE
+  ----------------------------------------------------------------------------------*/
+}
+@media (max-width: 992px) {
+  #navigation .xfControl {
+    display: inline-block;
+    width: 30%;
+    margin-right: 5px;
+  }
+}
+@media (max-width: 767px) {
+  #navigation .xfControl {
+    width: 100%;
+    display: block;
+  }
+}
+#navigation .xfControl:last-of-type a::before {
+  display: none !important;
+}
+#navigation .xfControl a {
+  background: none;
+  color: black !important;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.1 !important;
+  font-weight: normal !important;
+  padding: 15px !important;
+  margin: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media (max-width: 992px) {
+  #navigation .xfControl a {
+    padding: 15px 0 !important;
+  }
+}
+#navigation .xfControl a::before {
+  width: 32px !important;
+  height: 32px !important;
+  display: inline-block !important;
+  line-height: 32px !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  content: counter(navi);
+  font-size: 14px !important;
+  margin-right: 5px;
+  background: #00436a;
+  color: white;
+}
+#navigation .xfControl a:hover a {
+  overflow: visible;
+}
+#navigation .xfControl a:hover::before {
+  -webkit-box-shadow: 0px 0px 3px 0px white !important;
+  -moz-box-shadow: 0px 0px 3px 0px white !important;
+  box-shadow: 0px 0px 3px 0px white !important;
+}
+@media (max-width: 992px) {
+  #navigation .xfControl.activePageLink {
+    position: absolute;
+    top: 0;
+    left: 180px;
+    width: auto;
+    height: 60px;
+    line-height: 60px !important;
+    margin: 0 !important;
+  }
+  #navigation .xfControl.activePageLink h1 {
+    height: 60px;
+    line-height: 60px !important;
+  }
+}
+#navigation .xfControl.activePageLink a {
+  font-weight: bold !important;
+}
+@media (max-width: 992px) {
+  #navigation .xfControl.activePageLink a {
+    background: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 1.2em !important;
+    height: 60px;
+    line-height: 60px !important;
+  }
+  #navigation .xfControl.activePageLink a::before {
+    display: none !important;
+  }
+}
+#navigation .xfControl.invalidPage .validationInfoContainer {
+  display: none;
+}
+#navigation .xfControl.invalidPage a {
+  color: #DD300E !important;
+}
+#navigation .xfControl.invalidPage a::before {
+  background: #DD300E;
+}
+#navigation .xfControl.invalidPage a::after {
+  content: "!";
+  padding: 3px 5px;
+  margin-left: 5px;
+  background: #DD300E;
+  color: white;
+}
+#navigation .xfTrigger h1 {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 992px) {
+  #navigation .xfTrigger h1 {
+    display: inline-block;
+  }
+}
+#navigation .arrowClass {
+  display: none;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# FORMULAR - BUTTONS WEITER, ZURÜCK, PRÜFEN, ...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media (max-width: 992px) {
+  .formWrapper form .buttons #save {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .formWrapper form .buttons #save::before {
+    padding: 5px;
+    width: 100% !important;
+    height: 100% !important;
+    font-size: 20px !important;
+  }
+  .formWrapper form .buttons #save button.xfValue {
+    width: 50px !important;
+    height: 50px !important;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+/*----------------------------------------------------------------------------------
+# BUTTONLEISTE
+----------------------------------------------------------------------------------*/
+.formWrapper form .buttons {
+  display: block;
+  line-height: 60px;
+  padding: 0 20px !important;
+  margin: 0 !important;
+  text-align: left;
+  background: white;
+  border-top: 2px solid #00264b;
+}
+@media (max-width: 992px) {
+  .formWrapper form .buttons {
+    display: block;
+    float: none !important;
+    overflow: hidden;
+    line-height: 60px;
+  }
+  .formWrapper form .buttons .xfControl {
+    float: left;
+  }
+  .formWrapper form .buttons .xfControl input, .formWrapper form .buttons .xfControl button {
+    font-size: 14px !important;
+    padding: 5px !important;
+  }
+}
+@media (max-width: 1200px) {
+  .formWrapper form .buttons input, .formWrapper form .buttons button {
+    font-size: 14px !important;
+    padding: 5px !important;
+  }
+}
+.formWrapper form .buttons #next {
+  margin-right: 10px;
+}
+.formWrapper form .buttons #cancel {
+  float: right;
+}
+@media (max-width: 992px) {
+  .formWrapper form .buttons #check-current, .formWrapper form .buttons #check-form, .formWrapper form .buttons #cancel {
+    display: none;
+  }
+  .formWrapper form .buttons #save::before {
+    content: "💾";
+    border: 1px solid black;
+  }
+  .formWrapper form .buttons #save:hover::before {
+    -webkit-box-shadow: 0px 0px 3px 1px #4D4D4D !important;
+    -moz-box-shadow: 0px 0px 3px 1px #4D4D4D !important;
+    box-shadow: 0px 0px 3px 1px #4D4D4D !important;
+  }
+  .formWrapper form .buttons #previous {
+    margin-right: 5px;
+  }
+  .formWrapper form .buttons #previous button {
+    padding: 10px !important;
+  }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# FEHLERBOX OBEN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#errorBox {
+  background: white !important;
+  color: #DD300E !important;
+  border: 1px solid #DD300E;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  position: relative;
+}
+#errorBox::before {
+  content: "Im Formular gibt es ungültige Eingaben.";
+}
+#errorBox::after {
+  text-transform: uppercase;
+  color: #DD300E;
+  content: "Fehlerliste anzeigen";
+  float: right;
+}
+#errorBox > * {
+  display: none;
+}
+#errorBox:hover {
+  padding: 25px 10px;
+  -webkit-box-shadow: 2px 0px 3px 1px #DD300E !important;
+  -moz-box-shadow: 2px 0px 3px 1px #DD300E !important;
+  box-shadow: 2px 0px 3px 1px #DD300E !important;
+}
+#errorBox:hover::before {
+  display: none;
+}
+#errorBox:hover::after {
+  display: none;
+}
+#errorBox:hover > * {
+  display: block;
+}
+#errorBox .errorHeadline {
+  font-size: 16px !important;
+  font-weight: normal;
+  padding: 0 !important;
+  color: #DD300E;
+}
+#errorBox .errorBoxEntry {
+  line-height: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#errorBox .errorBoxEntry:hover {
+  white-space: normal;
+}
+#errorBox .errorBoxEntry > div {
+  display: inline;
+}
+#errorBox .errorBoxEntry:first-child {
+  margin-bottom: 15px;
+}
+#errorBox .errorBoxEntry:not(:first-child) {
+  margin-bottom: 10px;
+}
+#errorBox .errorBoxEntry:not(:first-child)::before {
+  margin: 0;
+  margin-right: 5px;
+  display: inline;
+}
+#errorBox .errorBoxEntry:not(:first-child) a {
+  text-decoration: none;
+  padding: 0 !important;
+  color: #DD300E !important;
+  font-size: 14px !important;
+  line-height: 1.1;
+  font-weight: normal;
+  display: inline;
+}
+#errorBox .errorBoxEntry:not(:first-child) a:hover {
+  color: #A82C10 !important;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ERRORS INLINE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.xfInput.xfInvalid .xfLabel {
+  color: #DD300E !important;
+}
+.xfInput.xfInvalid .labelContainer .invalidInput {
+  display: none;
+}
+.xfInput.xfInvalid input[type=text], .xfInput.xfInvalid select {
+  border-bottom: 2px solid #DD300E !important;
+}
+.xfInput.xfInvalid .xfAlert {
+  display: block !important;
+  background: white;
+  padding: 0;
+  margin: 0;
+  width: 100% !important;
+  max-width: 100% !important;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.2;
+}
+.xfInput.xfInvalid .xfAlert .closeAlertIcon {
+  display: none;
+}
+.xfInput.xfInvalid .xfAlert .bfAlertMsg {
+  display: block !important;
+  font-weight: normal;
+  margin-left: 25px;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+.xfInput.xfInvalid .xfAlert::before {
+  display: block;
+  float: left;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# FORMULAR - GRÜNES I
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.bfHelpText, .helptextContainer .helpText {
+  position: relative !important;
+  top: 0;
+  left: 0;
+  display: block !important;
+  color: #4D4D4D;
+  background: none;
+  border: none !important;
+  border-radius: 0 !important;
+  width: auto;
+  max-width: 90%;
+  height: 20px;
+  overflow: hidden;
+  margin-right: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: normal;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.bfHelpText::before, .helptextContainer .helpText::before {
+  width: 16px !important;
+  height: 16px !important;
+  display: inline-block !important;
+  line-height: 16px !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  content: "i";
+  border: 1px solid #4D4D4D;
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+  -webkit-transition: width 0.5s ease-in-out;
+  -moz-transition: width 0.5s ease-in-out;
+  -o-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+.bfHelpText::after, .helptextContainer .helpText::after {
+  content: "Vergrößern";
+  text-transform: uppercase;
+  background: #00436a;
+  color: white;
+  position: absolute;
+  display: none;
+  font-size: 11px !important;
+  top: 0;
+  right: 0;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 10px;
+  z-index: 9;
+  cursor: pointer;
+}
+.bfHelpText:hover::before, .helptextContainer .helpText:hover::before {
+  background: #00436a;
+  color: white;
+}
+.bfHelpText:hover::after, .helptextContainer .helpText:hover::after {
+  display: block;
+}
+.bfHelpText:active, .helptextContainer .helpText:active, .bfHelpText:focus, .helptextContainer .helpText:focus {
+  font-size: 14px !important;
+  padding: 20px 10px;
+  padding-left: 40px;
+  overflow: visible;
+  white-space: normal;
+  position: absolute;
+  height: auto;
+  border: 1px solid #80A1B4 !important;
+  border-radius: 0;
+  color: black;
+}
+.bfHelpText:active::before, .helptextContainer .helpText:active::before, .bfHelpText:focus::before, .helptextContainer .helpText:focus::before {
+  width: 28px !important;
+  height: 28px !important;
+  display: inline-block !important;
+  line-height: 28px !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  border: none;
+  background: #00436a;
+  color: white;
+  position: absolute;
+  left: 5px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+.bfHelpText:active::after, .helptextContainer .helpText:active::after, .bfHelpText:focus::after, .helptextContainer .helpText:focus::after {
+  display: none;
+  /*
+  @include circle(26px);
+  content: "x";
+  padding: 0;
+  top: -10px;
+  right: -10px;
+  */
+}
+
+.helptextContainer img.hintIcon {
+  display: none;
+}
+/*----------------------------------------------------------------------------------
+# STEUERELEMENTE - STANDARD
+----------------------------------------------------------------------------------*/
+.formContentBody .xfControl {
+  margin-bottom: 20px !important;
+  background: white;
+}
+.formContentBody .xfControl .labelContainer {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 5px;
+}
+.formContentBody .xfControl .xfLabel {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.2;
+}
+.formContentBody .xfControl .widgetContainer {
+  position: relative;
+  padding: 0;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/*----------------------------------------------------------------------------------
+# ADRESSSUCHE
+----------------------------------------------------------------------------------*/
+.xfAddressSearchControl {
+  position: relative;
+}
+.xfAddressSearchControl img {
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+  z-index: 1;
+}
+.xfAddressSearchControl .xfAddressSearch {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 14px !important;
+  padding: 10px 0;
+  border: none !important;
+  border-bottom: 2px solid #4D4D4D !important;
+  width: 100%;
+}
+.xfAddressSearchControl .suggestionBox {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: normal;
+}
+.xfAddressSearchControl .suggestionBox .suggestion {
+  padding: 10px !important;
+  cursor: pointer !important;
+}
+.xfAddressSearchControl .suggestionBox .suggestion:hover {
+  background: #00436a !important;
+}
+.xfAddressSearchControl input.xfAddressSearch:focus ~ .suggestionBox {
+  -webkit-box-shadow: 0px 2px 3px 1px #4D4D4D !important;
+  -moz-box-shadow: 0px 2px 3px 1px #4D4D4D !important;
+  box-shadow: 0px 2px 3px 1px #4D4D4D !important;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# CHECKBOXEN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.xfControl.xfSelect .bfCheckBoxGroup .xfItemset .xfSelectorItem .xfCheckBoxValue + label, .xfControl.xsdBoolean .labelContainer label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px !important;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.xfControl.xfSelect .bfCheckBoxGroup .xfItemset .xfSelectorItem .xfCheckBoxValue + label:before {
+  content: "";
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 1px solid #00436a;
+}
+
+.xfControl.xfSelect .bfCheckBoxGroup .xfItemset .xfSelectorItem .xfCheckBoxValue:hover + label:before {
+  background: #00436B;
+}
+
+.xfControl.xfSelect .bfCheckBoxGroup .xfItemset .xfSelectorItem .xfCheckBoxValue:focus + label:before {
+  -webkit-box-shadow: 0 0 0 3px #F2F2F2 !important;
+  -moz-box-shadow: 0 0 0 3px #F2F2F2 !important;
+  box-shadow: 0 0 0 3px #F2F2F2 !important;
+}
+
+.xfControl.xfSelect .bfCheckBoxGroup .xfItemset .xfSelectorItem .xfCheckBoxValue:checked + label:before {
+  background: #00436a;
+}
+
+.xfControl.xfSelect .bfCheckBoxGroup .xfItemset .xfSelectorItem .xfCheckBoxValue:disabled + label {
+  color: #4D4D4D;
+  cursor: auto;
+}
+
+.xfControl.xfSelect .bfCheckBoxGroup .xfItemset .xfSelectorItem .xfCheckBoxValue:disabled + label:before {
+  -webkit-box-shadow: 0 0 0 0 white !important;
+  -moz-box-shadow: 0 0 0 0 white !important;
+  box-shadow: 0 0 0 0 white !important;
+  background: #F2F2F2;
+}
+
+.xfControl.xfSelect .bfCheckBoxGroup .xfItemset .xfSelectorItem .xfCheckBoxValue:checked + label:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  background: white;
+  width: 2px;
+  height: 2px;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.xfControl.xsdBoolean {
+  position: relative;
+}
+.xfControl.xsdBoolean .widgetContainer input[type=checkbox] {
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+  /*position: absolute;
+      opacity: 0; 
+      // @todo: Hier fehlt ein Container-Element für before
+      & + div::before {
+          @extend %cb_default;
+      }
+  
+      &:hover + div::before {
+          @extend %cb_hover;
+      }
+      &:checked + div::before {
+          @extend %cb_checked;
+      }
+      
+      // Disabled state label.
+      &:disabled + div {
+          @extend %cb_label_disabled;
+      }
+  
+      // Disabled box.
+      &:disabled + div:before {
+          @extend %cb_box_disabled;
+      }
+  
+      // Checkmark. Could be replaced with an image
+      &:checked + div:after {
+          @extend %cb_hakerl;
+      }*/
+}
+.xfControl.xsdBoolean .widgetContainer .bfHelpText {
+  position: relative;
+  left: 40px;
+  top: 0;
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+}
+.xfControl.xsdBoolean .labelContainer {
+  position: absolute;
+  top: 0;
+  left: 40px;
+}
+.xfControl.xfSelect div.widgetContainer {
+  width: 100% !important;
+}
+.xfControl.xfSelect .bfCheckBoxGroup .xfItemset .xfSelectorItem .xfCheckBoxValue {
+  position: absolute;
+  opacity: 0;
+}
+/*----------------------------------------------------------------------------------
+# DATEPICKER
+----------------------------------------------------------------------------------*/
+.xfControl.xsdDate .widgetContainer .dijit.xfValue {
+  height: auto;
+  position: relative;
+}
+@media (max-width: 992px) {
+  .xfControl.xsdDate .widgetContainer .dijit.xfValue {
+    width: 95% !important;
+  }
+}
+.xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitButtonNode {
+  float: none !important;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 30px;
+  z-index: 6;
+  background: none !important;
+}
+.xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitButtonNode::before {
+  content: "📅";
+  text-align: center;
+  background: none !important;
+  font-size: 24px !important;
+  color: #00264b !important;
+  opacity: 1 !important;
+  height: 100%;
+  width: 30px;
+  display: block;
+}
+.xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitButtonNode input.dijitInputField.dijitArrowButtonInner {
+  width: 30px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+/*----------------------------------------------------------------------------------
+# STANDARDGRUPPEN
+----------------------------------------------------------------------------------*/
+.xfFullGroup:not(.formContentBody), .xfMpuAddressBlock, .xfMpuPersonBlock {
+  -webkit-box-shadow: 1px 1px 3px 1px #4D4D4D !important;
+  -moz-box-shadow: 1px 1px 3px 1px #4D4D4D !important;
+  box-shadow: 1px 1px 3px 1px #4D4D4D !important;
+  padding: 10px;
+  background: white;
+  margin-bottom: 30px;
+}
+
+.groupTitle {
+  font-size: 18px !important;
+  line-height: 1.1 !important;
+  background: none !important;
+  border-left: 4px solid #00436a !important;
+  padding-left: 10px !important;
+  font-weight: bold !important;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.xfFullGroup:not(.formContentBody) .xfMpuAddressBlock, .xfFullGroup:not(.formContentBody) .xfMpuPersonBlock {
+  -webkit-box-shadow: 0 0 0 0 white !important;
+  -moz-box-shadow: 0 0 0 0 white !important;
+  box-shadow: 0 0 0 0 white !important;
+}
+
+.xfMpuPersonBlock + *, .xfMpuAddressBlock + * {
+  border-top: 1px solid #00264b;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# STEUERELEMENTE - TEXT INPUTS, RICHTEXT, SELECTS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*----------------------------------------------------------------------------------
+# SELECTS
+----------------------------------------------------------------------------------*/
+.xfControl select {
+  max-width: 90% !important;
+}
+@media (max-width: 992px) {
+  .xfControl select {
+    width: 95% !important;
+  }
+}
+
+/*----------------------------------------------------------------------------------
+# INPUT TEXT
+----------------------------------------------------------------------------------*/
+@media (max-width: 992px) {
+  .xfInput input[type=text] {
+    width: 95% !important;
+  }
+}
+
+/*
+@todo: input-sizes, was ist die Maximalgröße?
+Austesten, welche Größen hier passen
+*/
+.xfControl input[size="1"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="2"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="3"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="4"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="5"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="6"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="7"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="8"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="9"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="10"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="11"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="12"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="13"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="14"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="15"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="16"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="17"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="18"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="19"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="20"] {
+  width: 150px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="21"] {
+  width: 200px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="22"] {
+  width: 200px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="23"] {
+  width: 200px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="24"] {
+  width: 200px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="25"] {
+  width: 200px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="26"] {
+  width: 200px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="27"] {
+  width: 200px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="28"] {
+  width: 200px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="29"] {
+  width: 200px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="30"] {
+  width: 200px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="31"] {
+  width: 300px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="32"] {
+  width: 300px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="33"] {
+  width: 300px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="34"] {
+  width: 300px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="35"] {
+  width: 300px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="36"] {
+  width: 300px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="37"] {
+  width: 300px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="38"] {
+  width: 300px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="39"] {
+  width: 300px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="40"] {
+  width: 300px !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="41"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="42"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="43"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="44"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="45"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="46"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="47"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="48"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="49"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="50"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="51"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="52"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="53"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="54"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="55"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="56"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="57"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="58"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+.xfControl input[size="59"] {
+  width: 90% !important;
+  max-width: 90% !important;
+}
+
+/*----------------------------------------------------------------------------------
+# READONLY
+----------------------------------------------------------------------------------*/
+.xfControl input[disabled], .xfControl select[disabled] {
+  border: none !important;
+}
+.xfControl input[disabled]:hover, .xfControl select[disabled]:hover {
+  background: #F2F2F2 !important;
+  border: none !important;
+}
+
+/*----------------------------------------------------------------------------------
+# RICHTEXT
+----------------------------------------------------------------------------------*/
+.xfContainer .text {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 14px !important;
+  margin-left: 0;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# RADIOS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.xfRadioLabel {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 14px !important;
+}
+
+[type=radio]:checked,
+[type=radio]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+[type=radio]:checked + label,
+[type=radio]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: black;
+}
+
+[type=radio]:checked + label:before,
+[type=radio]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid black;
+  border-radius: 100%;
+  background: white;
+}
+
+[type=radio]:checked:hover + label:before,
+[type=radio]:not(:checked):hover + label:before {
+  -webkit-box-shadow: 0px 0px 2px 1px #00436a !important;
+  -moz-box-shadow: 0px 0px 2px 1px #00436a !important;
+  box-shadow: 0px 0px 2px 1px #00436a !important;
+}
+
+[type=radio]:checked + label:after,
+[type=radio]:not(:checked) + label:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #00436a;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+[type=radio]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+[type=radio]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+/*----------------------------------------------------------------------------------
+# REPEATS
+----------------------------------------------------------------------------------*/
+.xfGroup.repeatContainer .xfGroupLabel {
+  font-size: 24px !important;
+}
+.xfGroup.repeatContainer .fullExpandableRepeatButtons {
+  margin-top: 10px;
+}
+.xfGroup.repeatContainer .fullExpandableRepeatButtons button::before {
+  width: 18px !important;
+  height: 18px !important;
+  display: inline-block !important;
+  line-height: 18px !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  border: 1px solid white;
+  color: white;
+  content: "+";
+  margin-right: 5px;
+}
+.xfGroup.repeatContainer .xfRepeat .xfRepeatItem {
+  padding: 0 !important;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 1px 1px 3px 1px #4D4D4D !important;
+  -moz-box-shadow: 1px 1px 3px 1px #4D4D4D !important;
+  box-shadow: 1px 1px 3px 1px #4D4D4D !important;
+}
+.xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader {
+  margin: 0 !important;
+  background: #F2F2F2 !important;
+  height: 50px;
+  line-height: 50px !important;
+  position: relative;
+  overflow: hidden;
+}
+.xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatHeaderLabel {
+  padding: 0 !important;
+  margin-left: 20px !important;
+  background: none !important;
+}
+.xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .readOnlyOutputText {
+  margin-left: 15px;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 18px !important;
+  background: none !important;
+}
+.xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton {
+  overflow: hidden;
+  background: none !important;
+  padding-right: 5px;
+  line-height: 50px !important;
+  display: inline-block;
+}
+.xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .expCollapseButton {
+  line-height: 50px;
+  width: calc(100% - 100px);
+  height: 100%;
+  padding-left: 10px;
+  position: absolute;
+  text-align: left;
+  top: 0;
+  left: 0;
+}
+.xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .expCollapseButton img {
+  height: 14px;
+}
+.xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatBody {
+  padding: 10px !important;
+}
+
+/*----------------------------------------------------------------------------------
+# UPLOAD
+----------------------------------------------------------------------------------*/
+.xfUpload.xfControl .labelContainer {
+  margin-bottom: 55px !important;
+}
+.xfUpload.xfControl .labelContainer label::before {
+  content: "Datei wählen";
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+.xfUpload.xfControl .widgetContainer .uploadContainer .upload input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.xfUpload.xfControl .widgetContainer .uploadContainer .uploadedFile {
+  display: block;
+  width: 100%;
+}
+.xfUpload.xfControl .widgetContainer .uploadContainer .uploadedFile .xfValue {
+  font-size: 14px !important;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+/*# sourceMappingURL=for.css.map */

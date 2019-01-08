@@ -1,0 +1,123 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# LAYOUT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+body {
+	font-family: $font;
+	overflow: hidden !important;
+	height: 100%;
+}
+html {
+	height: 100%;
+}
+
+/*----------------------------------------------------------------------------------
+# VARIABLEN
+----------------------------------------------------------------------------------*/
+$navi_breite: 300px;	// Standardbreite der Formularnavigation
+$navi_top_hoehe: 60px; // Höhe "Formularnavigation"
+$navi_top_margin: 15px; // Margin (bottom) nach den Buttons
+$buttons_hoehe: 60px;	// Höhe der Buttonleiste unten
+$buttons_hoehe_margin: 100px; //Höhe der Buttons plus Margin
+
+/*----------------------------------------------------------------------------------
+# MAIN WRAPPERS
+----------------------------------------------------------------------------------*/
+.formWrapper  {
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+	@include respond-to(md) {
+		padding-top: 0px !important;
+	}
+
+	form {
+		display: grid; // @comp: evtl. mixin mit -ms prefixes (IE11 !!) 
+		grid-template-columns: $navi_breite auto;
+		grid-template-rows: auto $buttons_hoehe;
+		height: 100%;
+		width: 100%;
+		min-width: 0;
+
+		@include respond-to(md) {
+			display: flex;
+            flex-flow: column nowrap;
+		}
+	
+
+		#navigation {
+			grid-column-start: 1;
+			grid-row-start: 1;
+			grid-row-end: span 2;
+			display: block;
+
+			@include respond-to(md) {
+				width: 100%;
+				flex: 0 0 $navi_top_hoehe;
+			}
+		}
+		.buttons {
+			grid-column-start: 2;
+			grid-row-start: 2;
+
+			@include respond-to(md) {
+				flex: 1 0 $buttons_hoehe;
+				width: 100%;
+			}
+		}
+		#formBorder {
+			grid-column-start: 2;
+			grid-row-start: 1;
+			border: none;
+			background: none;
+			padding: 0 !important;
+			min-width: 0;
+			overflow: hidden;
+
+			@include respond-to(md) {
+				display: block;
+                flex: 1 1 100%;
+                width: 100%;
+			}
+			
+			.resizeableForm {	
+				background: color(white);
+				width: 100%;
+				height: 100% !important;
+				overflow-y: scroll;
+				overflow-x: hidden;
+
+				#formContent {
+					margin: 0;
+					padding: 10px;
+					overflow: hidden;
+					box-sizing: border-box;
+
+					#formContentBody {
+						padding: 0 !important;
+
+						@include respond-to(md) {
+							margin-right: 10px;
+						}
+
+/*----------------------------------------------------------------------------------
+# ZWEISPALTIGE LAYOUTS
+----------------------------------------------------------------------------------*/
+						.keep-together {
+							display: flex;
+							flex-flow: row wrap;
+						
+							> .xfControl {
+								flex: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+

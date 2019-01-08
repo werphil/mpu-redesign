@@ -1,0 +1,58 @@
+/*----------------------------------------------------------------------------------
+# DATEPICKER
+----------------------------------------------------------------------------------*/
+
+.xfControl.xsdDate {
+
+	.widgetContainer {
+		.dijit.xfValue {
+			@extend %default;
+			height: auto;
+			position: relative;
+
+			@include respond-to(md) {
+				width: 95% !important;
+			}
+
+			// Datepicker
+			.dijitButtonNode {
+				float: none !important;
+				position: absolute;
+				right: 0;
+				top: 0;
+				height: 100%;
+				width: 30px;
+				z-index: 6;
+				background: none !important;
+
+				&::before {
+					content: "\1F4C5";
+					text-align: center;
+					background: none !important;
+					font-size: 24px !important;
+					color: color(primary, dark) !important;
+					opacity: 1 !important;
+					height: 100%;
+					width: 30px;
+					display: block;
+				}
+
+				input.dijitInputField.dijitArrowButtonInner {
+					width: 30px;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					opacity: 0;
+				}
+			}
+
+			//Input
+			.dijitInputField.dijitInputContainer {
+				input.dijitInputInner {
+					@extend %input;
+				}
+			}
+		}
+	}
+}

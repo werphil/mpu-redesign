@@ -1,0 +1,59 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# BUTTONS IN DER MELDUNGSLISTE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+%melbutton {
+	height: 35px !important;
+	line-height: 35px !important;
+	padding: 0 10px !important;
+}
+
+.ui-datatable {
+
+/*----------------------------------------------------------------------------------
+# BEARBEITEN, ANSEHEN, HERUNTERLADEN, ...
+----------------------------------------------------------------------------------*/
+.buttonSection {
+
+	/* @test: Gisa-Button ist breiter */
+	input, button {
+		@extend %button;
+		@extend %melbutton;
+
+		@include respond-to(sm) {
+			margin-bottom: 5px !important;
+		}
+		
+	}
+	
+	// @hax
+	input:first-child,
+	input[value=Bearbeiten],
+	input[value=Ansehen],
+	a.melActionButton {
+		@extend %primarybutton;
+		@extend %melbutton;
+	}
+
+	.ui-button {
+		background: color(white) !important;
+	}
+}
+
+/*----------------------------------------------------------------------------------
+# LÖSCHEN
+----------------------------------------------------------------------------------*/
+a.melActionLink {
+	@extend %linkbutton;
+	@extend %melbutton;
+	border: 1px solid transparent !important;
+	color: color(red) !important;
+
+	&:hover {
+		border: 1px solid color(red) !important;
+		@include box-shadow(0, 0, 0, 0, white);
+	}
+}
+
+
+}

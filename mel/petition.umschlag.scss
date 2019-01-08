@@ -1,0 +1,230 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# UMSCHLAG
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#petitionCover.petitionBorder {
+
+	padding: 5px;
+	margin-top: 20px;
+	margin-bottom: 100px;
+	border: none !important;
+	font-size: fontsize(body);
+	display: grid;
+	grid-template-columns: 70% 30%;
+	grid-template-rows: 400px auto;
+	
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	@include respond-to(md) {
+		display: block;
+	}
+
+/*----------------------------------------------------------------------------------
+# FORMULARUMSCHLAG - MELDUNGSSTATUS
+----------------------------------------------------------------------------------*/
+
+#section1 {
+	margin: 20px 0 !important;
+	padding: 10px 0;
+	display: block;
+	grid-column-start: 2;
+	grid-row-start: 1;
+	text-align: left;
+	background: color(grey, light);
+	@include box-shadow(0px, 0px, 5px, 1px, color(grey, dark));
+
+	@include respond-to(md) {
+		width: 100%;
+    padding: 0 !important;
+	}
+
+	.petitionProperties {
+		display: block;
+		line-height: 1.1 !important;
+		width: 100%;
+		margin: 0 10px;
+
+		.outputLabel {
+			text-align: left;
+			width: 30%;
+			font-weight: bold;
+		}
+	}
+}
+
+/*----------------------------------------------------------------------------------
+# FORMULARUMSCHLAG - VORBEFÜLLUNG
+----------------------------------------------------------------------------------*/
+
+#sectionPrefillDeclaration {
+	display: block;
+	grid-column-start: 1;
+	grid-row-start: 1;
+	padding: 15px;
+
+	@include respond-to(md) {
+		width: 100%;
+    padding: 0 !important;
+	}
+
+	p {
+		margin-bottom: 10px;
+	}
+	form {
+		padding-bottom: 20px;
+	}
+
+	/*----------------------------------------------------------------------------------
+	# CHECKBOXEN VORBEFÜLLUNG
+	(kopiert aus einem Codepen)
+	----------------------------------------------------------------------------------*/
+	[type="checkbox"]:not(:checked),
+	[type="checkbox"]:checked {
+		position: absolute;
+		left: -9999px;
+	}
+	[type="checkbox"]:not(:checked) + label,
+	[type="checkbox"]:checked + label {
+		position: relative;
+		padding-left: 1.95em;
+		cursor: pointer;
+	}
+	[type="checkbox"]:not(:checked) + label:before,
+	[type="checkbox"]:checked + label:before {
+		content: '';
+		position: absolute;
+		left: 0; top: 0;
+		width: 1.25em; height: 1.25em;
+		border: 2px solid #ccc;
+		background: color(hover, light);
+		border-radius: 4px;
+		@include box-shadow(inset, 0, 1px, 3px,color(grey, light));
+	}
+	[type="checkbox"]:not(:checked) + label:before {
+		background: color(white);
+	}
+	[type="checkbox"]:not(:checked) + label:after,
+	[type="checkbox"]:checked + label:after {
+		content: '\2713\0020';
+		position: absolute;
+		top: .15em; left: .22em;
+		font-size: 1.35em;
+		line-height: 0.8;
+		color: color(white);
+		transition: all .2s;
+	}
+	[type="checkbox"]:not(:checked) + label:after {
+		opacity: 0;
+		transform: scale(0);
+	}
+	[type="checkbox"]:checked + label:after {
+		opacity: 1;
+		transform: scale(1);
+	}
+	[type="checkbox"]:disabled:not(:checked) + label:before,
+	[type="checkbox"]:disabled:checked + label:before {
+		box-shadow: none;
+		border-color: #bbb;
+		background-color: #ddd;
+	}
+	[type="checkbox"]:disabled:checked + label:after {
+		color: color(grey, dark);
+	}
+	[type="checkbox"]:disabled + label {
+		color: color(grey, dark);
+		cursor: not-allowed;
+	}
+	[type="checkbox"]:checked:focus + label:before,
+	[type="checkbox"]:not(:checked):focus + label:before {
+		border: 1px dotted color(support, dark);
+	}
+	ul.prefillDeclarationList [type="checkbox"]:not(:disabled) + label:hover:before {
+		border: 2px solid color(support, dark) !important;
+	}
+	
+}
+
+
+/*----------------------------------------------------------------------------------
+# FORMULARUMSCHLAG - UMSCHLAGSTEXT
+----------------------------------------------------------------------------------*/
+
+.section2 {
+	grid-column-start: 1;
+	grid-column-end: span 2;
+	grid-row-start: 2;
+	margin-top: 20px;
+	border-top: 1px solid color(grey, dark);
+	padding-top: 10px;
+}
+
+
+/*----------------------------------------------------------------------------------
+# FORMULARUMSCHLAG - STYLES FÜR ALLE
+----------------------------------------------------------------------------------*/
+.section1_2 p, .section2 p, .section2 div  {
+	line-height: 1.5;
+	text-align: justify;
+
+	a {
+		color: color(primary, light);
+
+		&:hover {
+			color: color(hover, dark);
+		}
+	}
+	
+}
+
+.titleSection2 {
+	font-size: fontsize(lead);
+	line-height: 1.1 !important;
+}
+
+ul.prefillDeclarationList {
+	padding-left: 5px;
+}
+
+
+/*----------------------------------------------------------------------------------
+# BUTTONS UNTEN (Weiter zum Formular, Meldungseigenschaften)
+----------------------------------------------------------------------------------*/
+
+#buttonSection {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background: white;
+	width: 100%;
+	text-align: center;
+	z-index: 999;
+	@include box-shadow(0px, -2px, 4px, 1px, color(grey, dark));
+
+	input {
+		@extend %umschlagbutton;
+
+		@include respond-to(sm) {
+				margin-bottom: 5px !important;
+		}
+	}
+	input:nth-of-type(2) {
+		@extend %primaryumschlagbutton;
+	}
+}
+ 
+	
+}
+
+
+
+
+	
+
+		
+
+	
+	
+	
+
+

@@ -1,0 +1,144 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# MEL - HEADERLEISTE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+#melContent #coverHeader {
+
+// MOBILE ANSICHT
+@include respond-to(md) {
+
+    @extend %mobileHeader;
+    flex: 0 0 $headerHeight;
+    display: flex; // @comp
+    flex-flow: row nowrap;
+    min-width: 0px;
+}
+
+/*----------------------------------------------------------------------------------
+# MELDUNG TITEL
+----------------------------------------------------------------------------------*/
+
+.ivpCovertitleWrapper {
+
+    @include respond-to(md) {
+        color: color(white);
+        height: $headerHeight;
+        box-sizing: border-box;
+        line-height: $headerHeight !important;
+        flex: 1 auto;
+        min-width: 0px;
+        padding-left: 50px; // Chevron space
+        padding-right: 5px;
+
+        .ivpLogo {
+            display: none;
+        }
+    }
+
+    
+
+    .ivpTitle {
+
+        @include respond-to(md) {
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: $font;
+            font-size: fontsize(h2);
+            line-height: 1.3 !important;
+            margin-top: 5px;
+
+            @include respond-to(md) {
+                font-size: fontsize(body);
+                width: 100%;
+                text-align: center;
+                line-height: $headerHeight !important;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+    
+/*----------------------------------------------------------------------------------
+# MELDUNG SCHLIESSEN (ROTES X RECHTS OBEN)
+----------------------------------------------------------------------------------*/
+// Da das Bild nur schlecht skalierbar war größere Version mit Emoji (Unicode)
+#closeCover {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    padding: 0;
+    width: 40px !important;
+    height: 40px;
+
+    @include respond-to(md) {
+        left: 0;
+        top: 0;
+        width: 50px !important;
+        height: $headerHeight;
+        overflow: hidden;
+    }
+
+    .closeCoverImage {
+        width: 100%;
+        height: 40px;
+        margin: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        padding: 0;
+
+        @include respond-to(md) {
+            height: $headerHeight;
+        }
+    }
+    &::before {
+        content: "\274C";
+        width: 100%;
+        height: 40px;
+        font-size: 32px;
+        display: block;
+        text-decoration: none !important;
+
+        @include respond-to(md) {
+            content: "\2039";
+            color: color(white) !important;
+            border: none !important;
+            text-align: center !important;
+            height: $headerHeight !important;
+            font-size: $headerHeight !important;
+            line-height: $headerHeight !important;
+            background: color(primary, dark);
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+    }
+    &:hover {
+        border: none !important;
+        background: none !important;
+        text-decoration: none !important;
+        &::before {
+            text-shadow: 0px 0px 3px color(grey, dark);
+            text-decoration: none !important;
+
+            @include respond-to(md) {
+                background: color(hover, dark) !important;
+                height: $headerHeight !important;
+                border: none !important;
+                text-shadow: none !important;
+                @include box-shadow(0,0,0,0, white);
+            }
+        }
+    }
+}
+
+
+
+}

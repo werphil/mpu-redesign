@@ -1,0 +1,122 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# FILTERLEISTE BEI JEDER PETITIONTABLE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+%topcontrol {
+	@extend %control;
+	border-bottom: 1px solid color(primary, light) !important;
+
+	&:hover, &:active, &:focus, .ui-state-focus {
+		border-bottom-width: 2px !important;
+	}
+}
+
+.petitionTable > div.ui-datatable-header {
+	@extend %boxdefault;
+	margin-bottom: 0;
+	padding: 0 !important;
+	border-radius: none !important;
+
+	@include respond-to(md) {
+
+	}
+
+	@include respond-to(sm) {
+		margin: 0 5px !important;
+	}
+}
+
+/*----------------------------------------------------------------------------------
+# TEXTFILTER
+----------------------------------------------------------------------------------*/
+.filterLabel {
+	position: relative;
+
+	label {
+		display: none;
+	}
+
+	input {
+		@extend %topcontrol;
+		padding: 10px 0 !important;
+		width: 100% !important;	
+		position: relative;
+		display: inline-block;
+
+	}
+
+	> span {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+	}
+
+	@include respond-to(md) {
+		width: 100% !important;
+	}
+}
+
+
+/*----------------------------------------------------------------------------------
+# SORTIER-DROPDOWN - CONTROL
+----------------------------------------------------------------------------------*/
+.sortWidgetsContainer {
+
+	.sortwidget .ui-selectonemenu {
+		@extend %topcontrol;
+
+		.ui-selectonemenu-label {
+			@extend %boxdefault;
+			padding: 8px;
+			font-size: fontsize(body);
+		}
+
+		.ui-selectonemenu-trigger {
+			@extend %boxdefault;
+
+			.ui-icon {
+				border-radius: 0 !important;
+				border: none;
+			}
+		}
+	}
+
+	label {
+		font-weight: normal;
+		line-height: 10px;
+		border: none;
+	}
+
+	@include respond-to(md) {
+		width: 100%;
+		text-align: left;
+		
+	}
+}
+
+/*----------------------------------------------------------------------------------
+# SORTIERDROPDOWN - ITEMS
+----------------------------------------------------------------------------------*/
+.ui-selectonemenu-panel, .ui-selectonemenu-list {
+	border: none;
+	padding: 0.1em 0 !important;
+	overflow-x: hidden;
+}
+.ui-selectonemenu-panel {
+	* {
+		border-radius: 0;
+		margin: 0;
+	}
+
+	.ui-selectonemenu-item {
+		font-size: 14px;
+		padding: 10px 5px;
+	}
+
+	.ui-state-highlight, .ui-selectonemenu-item:hover {
+		background: color(primary, light) !important;
+		text-shadow: none;
+		box-shadow: none;
+		color: color(white) !important;
+	}
+}
