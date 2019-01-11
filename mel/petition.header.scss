@@ -70,8 +70,8 @@
 // Da das Bild nur schlecht skalierbar war größere Version mit Emoji (Unicode)
 #closeCover {
     position: absolute;
-    right: 30px;
-    top: 20px;
+    right: 15px;
+    top: 15px;
     padding: 0;
     width: 40px !important;
     height: 40px;
@@ -100,13 +100,18 @@
         }
     }
     &::before {
-        content: "\274C";
+        // css-x statt bild
+        content: "x";
         width: 100%;
         height: 40px;
         font-size: 32px;
+        line-height: 40px;
+        text-align: center;
         display: block;
+        color: color(red) !important;
         text-decoration: none !important;
 
+        // Chevron links laut oegv
         @include respond-to(md) {
             content: "\2039";
             color: color(white) !important;

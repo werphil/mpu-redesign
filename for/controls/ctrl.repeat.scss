@@ -8,7 +8,7 @@
 		font-size: fontsize(h2);
 	}
 
-	.fullExpandableRepeatButtons {
+	.fullExpandableRepeatButtons, .compactRepeatButtons {
 		margin-top: 10px;
 
 		button {
@@ -24,14 +24,47 @@
 		}
 	}
 
+	table.xfRepeat {
+		border-spacing: 0 10px;
+		border-collapse: separate;
+		border: none;
+
+		th.colHeader {
+			border: none !important;
+		}
+
+		tr td:first-child {
+			padding-top: 10px;
+			padding-left: 10px;
+		}
+	}
+
 	.xfRepeat {
 		@extend %default;
 		
 
 		.xfRepeatItem {
 			padding: 0 !important;
+			
 			margin-bottom: 15px;
 			@include box-shadow(1px, 1px, 3px, 1px, color(grey, dark));
+
+			// Fix für Tabellen und Uploads
+			.xfUpload.xfControl {
+				.upload input {
+					width: auto;
+					height: auto;
+					opacity: 1;
+					position: static;
+				}
+
+			}
+		}
+
+		tr.xfRepeatItem td:last-child {
+			width: 50px !important;
+			text-align: right;
+			padding-right: 10px;
 		}
 		
 		.fullExpandableRepeatHeader {

@@ -16,7 +16,7 @@
 /*----------------------------------------------------------------------------------
 # Setzt alle Eigenschaften auf Standard
 ----------------------------------------------------------------------------------*/
-.xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatBody, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader, .xfGroup.repeatContainer .xfRepeat, .xfGroup.repeatContainer .xfGroupLabel, .xfControl.xsdDate .widgetContainer .dijit.xfValue, .xfInput input[type=text], .xfControl select, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner, .xfUpload.xfControl .labelContainer label::before, .formWrapper form .buttons input, .formWrapper form .buttons button, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button, .formWrapper form .buttons #cancel button, .xfGroup.repeatContainer .fullExpandableRepeatButtons button, .formWrapper form .buttons #next button {
+.xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatBody, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader, .xfGroup.repeatContainer .xfRepeat, .xfGroup.repeatContainer .xfGroupLabel, .summaryPageContent, .xfControl.xsdDate .widgetContainer .dijit.xfValue, .xfInput input[type=text], .xfControl select, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner, .xfUpload.xfControl label::before, .formWrapper form .buttons #sign ~ #finish button, .formWrapper form .buttons input, .formWrapper form .buttons button, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button, .formWrapper form .buttons #cancel button, .xfGroup.repeatContainer .fullExpandableRepeatButtons button, .xfGroup.repeatContainer .compactRepeatButtons button, .formWrapper form .buttons #next button, .formWrapper form .buttons #sign button, .formWrapper form .buttons #finish button {
   font-family: "Open Sans", sans-serif !important;
   font-weight: normal !important;
   font-size: 14px !important;
@@ -27,7 +27,7 @@
   background: none !important;
 }
 
-.xfInput input[type=text], .xfControl select, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner, .xfUpload.xfControl .labelContainer label::before, .formWrapper form .buttons input, .formWrapper form .buttons button, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button, .formWrapper form .buttons #cancel button, .xfGroup.repeatContainer .fullExpandableRepeatButtons button, .formWrapper form .buttons #next button {
+.xfInput input[type=text], .xfControl select, .xfControl.xsdDate .widgetContainer .dijit.xfValue .dijitInputField.dijitInputContainer input.dijitInputInner, .xfUpload.xfControl label::before, .formWrapper form .buttons #sign ~ #finish button, .formWrapper form .buttons input, .formWrapper form .buttons button, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button, .formWrapper form .buttons #cancel button, .xfGroup.repeatContainer .fullExpandableRepeatButtons button, .xfGroup.repeatContainer .compactRepeatButtons button, .formWrapper form .buttons #next button, .formWrapper form .buttons #sign button, .formWrapper form .buttons #finish button {
   box-shadow: none !important;
   border-radius: 0 !important;
 }
@@ -35,7 +35,7 @@
 /*----------------------------------------------------------------------------------
 # BUTTONS
 ----------------------------------------------------------------------------------*/
-.xfUpload.xfControl .labelContainer label::before, .formWrapper form .buttons input, .formWrapper form .buttons button, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button, .formWrapper form .buttons #cancel button, .xfGroup.repeatContainer .fullExpandableRepeatButtons button, .formWrapper form .buttons #next button {
+.xfUpload.xfControl label::before, .formWrapper form .buttons #sign ~ #finish button, .formWrapper form .buttons input, .formWrapper form .buttons button, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button, .formWrapper form .buttons #cancel button, .xfGroup.repeatContainer .fullExpandableRepeatButtons button, .xfGroup.repeatContainer .compactRepeatButtons button, .formWrapper form .buttons #next button, .formWrapper form .buttons #sign button, .formWrapper form .buttons #finish button {
   display: inline-block !important;
   height: auto !important;
   padding: 10px !important;
@@ -46,17 +46,17 @@
   text-align: center;
   cursor: pointer;
 }
-.xfUpload.xfControl .labelContainer label:hover::before, .formWrapper form .buttons input:hover, .formWrapper form .buttons button:hover, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button:hover, .formWrapper form .buttons #cancel button:hover, .xfGroup.repeatContainer .fullExpandableRepeatButtons button:hover, .formWrapper form .buttons #next button:hover, .xfUpload.xfControl .labelContainer label:active::before, .formWrapper form .buttons input:active, .formWrapper form .buttons button:active, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button:active, .formWrapper form .buttons #cancel button:active, .xfGroup.repeatContainer .fullExpandableRepeatButtons button:active, .formWrapper form .buttons #next button:active {
+.xfUpload.xfControl label:hover::before, .formWrapper form .buttons #sign ~ #finish button:hover, .formWrapper form .buttons input:hover, .formWrapper form .buttons button:hover, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button:hover, .formWrapper form .buttons #cancel button:hover, .xfGroup.repeatContainer .fullExpandableRepeatButtons button:hover, .xfGroup.repeatContainer .compactRepeatButtons button:hover, .formWrapper form .buttons #next button:hover, .formWrapper form .buttons #sign button:hover, .formWrapper form .buttons #finish button:hover, .xfUpload.xfControl label:active::before, .formWrapper form .buttons #sign ~ #finish button:active, .formWrapper form .buttons input:active, .formWrapper form .buttons button:active, .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader .repeatButton button:active, .formWrapper form .buttons #cancel button:active, .xfGroup.repeatContainer .fullExpandableRepeatButtons button:active, .xfGroup.repeatContainer .compactRepeatButtons button:active, .formWrapper form .buttons #next button:active, .formWrapper form .buttons #sign button:active, .formWrapper form .buttons #finish button:active {
   -webkit-box-shadow: 0px 0px 5px 0px #4D4D4D !important;
   -moz-box-shadow: 0px 0px 5px 0px #4D4D4D !important;
   box-shadow: 0px 0px 5px 0px #4D4D4D !important;
 }
 
-.xfGroup.repeatContainer .fullExpandableRepeatButtons button, .formWrapper form .buttons #next button {
+.xfGroup.repeatContainer .fullExpandableRepeatButtons button, .xfGroup.repeatContainer .compactRepeatButtons button, .formWrapper form .buttons #next button, .formWrapper form .buttons #sign button, .formWrapper form .buttons #finish button {
   background: #00264b !important;
   color: white !important;
 }
-.xfGroup.repeatContainer .fullExpandableRepeatButtons button:hover, .formWrapper form .buttons #next button:hover, .xfGroup.repeatContainer .fullExpandableRepeatButtons button:active, .formWrapper form .buttons #next button:active {
+.xfGroup.repeatContainer .fullExpandableRepeatButtons button:hover, .xfGroup.repeatContainer .compactRepeatButtons button:hover, .formWrapper form .buttons #next button:hover, .formWrapper form .buttons #sign button:hover, .formWrapper form .buttons #finish button:hover, .xfGroup.repeatContainer .fullExpandableRepeatButtons button:active, .xfGroup.repeatContainer .compactRepeatButtons button:active, .formWrapper form .buttons #next button:active, .formWrapper form .buttons #sign button:active, .formWrapper form .buttons #finish button:active {
   -webkit-box-shadow: 0px 0px 5px 0px #001A32 !important;
   -moz-box-shadow: 0px 0px 5px 0px #001A32 !important;
   box-shadow: 0px 0px 5px 0px #001A32 !important;
@@ -611,13 +611,14 @@ html {
   display: none;
 }
 .xfInput.xfInvalid input[type=text], .xfInput.xfInvalid select {
-  border-bottom: 2px solid #DD300E !important;
+  border-bottom-color: #DD300E !important;
 }
 .xfInput.xfInvalid .xfAlert {
   display: block !important;
   background: white;
   padding: 0;
   margin: 0;
+  margin-top: 5px;
   width: 100% !important;
   max-width: 100% !important;
   font-family: "Open Sans", sans-serif !important;
@@ -985,8 +986,12 @@ html {
   background: white;
   margin-bottom: 30px;
 }
-
-.groupTitle {
+.xfFullGroup:not(.formContentBody) .xfFullGroup, .xfFullGroup:not(.formContentBody) .xfMpuAddressBlock, .xfFullGroup:not(.formContentBody) .xfMpuPersonBlock, .xfMpuAddressBlock .xfFullGroup, .xfMpuAddressBlock .xfMpuAddressBlock, .xfMpuAddressBlock .xfMpuPersonBlock, .xfMpuPersonBlock .xfFullGroup, .xfMpuPersonBlock .xfMpuAddressBlock, .xfMpuPersonBlock .xfMpuPersonBlock {
+  -webkit-box-shadow: 0 0 0 0 white !important;
+  -moz-box-shadow: 0 0 0 0 white !important;
+  box-shadow: 0 0 0 0 white !important;
+}
+.xfFullGroup:not(.formContentBody) .groupTitle, .xfMpuAddressBlock .groupTitle, .xfMpuPersonBlock .groupTitle {
   font-size: 18px !important;
   line-height: 1.1 !important;
   background: none !important;
@@ -996,14 +1001,44 @@ html {
   font-family: "Open Sans", sans-serif !important;
 }
 
-.xfFullGroup:not(.formContentBody) .xfMpuAddressBlock, .xfFullGroup:not(.formContentBody) .xfMpuPersonBlock {
-  -webkit-box-shadow: 0 0 0 0 white !important;
-  -moz-box-shadow: 0 0 0 0 white !important;
-  box-shadow: 0 0 0 0 white !important;
+/*----------------------------------------------------------------------------------
+# ZUSAMMENFASSUNGSSEITE
+----------------------------------------------------------------------------------*/
+.summaryPageContent > .xfFullGroup {
+  padding: 0;
 }
-
-.xfMpuPersonBlock + *, .xfMpuAddressBlock + * {
-  border-top: 1px solid #00264b;
+.summaryPageContent > .xfFullGroup .xfGroupLabel.pageTitle {
+  background: #F2F2F2;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 24px !important;
+  padding: 20px 10px;
+  margin: 0;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.summaryPageContent .xfControl {
+  padding-left: 10px;
+}
+.summaryPageContent .xfControl .xfLabel {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+  text-align: left;
+  font-weight: bold;
+}
+.summaryPageContent .xfControl .xfLabel::after {
+  font-size: 14px !important;
+  font-family: "Open Sans", sans-serif !important;
+  line-height: 1.2;
+}
+.summaryPageContent .xfControl .xfValue.readOnlyOutputText {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  padding: 0;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1332,10 +1367,11 @@ Austesten, welche Größen hier passen
 /*----------------------------------------------------------------------------------
 # READONLY
 ----------------------------------------------------------------------------------*/
-.xfControl input[disabled], .xfControl select[disabled] {
+.xfControl [disabled], .xfControl.xfInvalid [disabled] .xfControl input[disabled], .xfControl select[disabled] {
   border: none !important;
+  cursor: not-allowed;
 }
-.xfControl input[disabled]:hover, .xfControl select[disabled]:hover {
+.xfControl [disabled]:hover, .xfControl.xfInvalid [disabled] .xfControl input[disabled]:hover, .xfControl select[disabled]:hover {
   background: #F2F2F2 !important;
   border: none !important;
 }
@@ -1347,6 +1383,11 @@ Austesten, welche Größen hier passen
   font-family: "Open Sans", sans-serif !important;
   font-size: 14px !important;
   margin-left: 0;
+  line-height: 1.2;
+}
+.xfContainer .text * {
+  font-size: 14px !important;
+  line-height: 1.2;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1429,10 +1470,10 @@ Austesten, welche Größen hier passen
 .xfGroup.repeatContainer .xfGroupLabel {
   font-size: 24px !important;
 }
-.xfGroup.repeatContainer .fullExpandableRepeatButtons {
+.xfGroup.repeatContainer .fullExpandableRepeatButtons, .xfGroup.repeatContainer .compactRepeatButtons {
   margin-top: 10px;
 }
-.xfGroup.repeatContainer .fullExpandableRepeatButtons button::before {
+.xfGroup.repeatContainer .fullExpandableRepeatButtons button::before, .xfGroup.repeatContainer .compactRepeatButtons button::before {
   width: 18px !important;
   height: 18px !important;
   display: inline-block !important;
@@ -1444,12 +1485,35 @@ Austesten, welche Größen hier passen
   content: "+";
   margin-right: 5px;
 }
+.xfGroup.repeatContainer table.xfRepeat {
+  border-spacing: 0 10px;
+  border-collapse: separate;
+  border: none;
+}
+.xfGroup.repeatContainer table.xfRepeat th.colHeader {
+  border: none !important;
+}
+.xfGroup.repeatContainer table.xfRepeat tr td:first-child {
+  padding-top: 10px;
+  padding-left: 10px;
+}
 .xfGroup.repeatContainer .xfRepeat .xfRepeatItem {
   padding: 0 !important;
   margin-bottom: 15px;
   -webkit-box-shadow: 1px 1px 3px 1px #4D4D4D !important;
   -moz-box-shadow: 1px 1px 3px 1px #4D4D4D !important;
   box-shadow: 1px 1px 3px 1px #4D4D4D !important;
+}
+.xfGroup.repeatContainer .xfRepeat .xfRepeatItem .xfUpload.xfControl .upload input {
+  width: auto;
+  height: auto;
+  opacity: 1;
+  position: static;
+}
+.xfGroup.repeatContainer .xfRepeat tr.xfRepeatItem td:last-child {
+  width: 50px !important;
+  text-align: right;
+  padding-right: 10px;
 }
 .xfGroup.repeatContainer .xfRepeat .fullExpandableRepeatHeader {
   margin: 0 !important;
@@ -1500,7 +1564,7 @@ Austesten, welche Größen hier passen
 .xfUpload.xfControl .labelContainer {
   margin-bottom: 55px !important;
 }
-.xfUpload.xfControl .labelContainer label::before {
+.xfUpload.xfControl label::before {
   content: "Datei wählen";
   position: absolute;
   top: calc(100% + 10px);

@@ -4,20 +4,31 @@
 
 /* fix für Umschlagbuttons in den Eigenschaften (Speichern soll primary sein) */
 
-#petitionCover.petitionBorder form[name=petitionPropertiesForm] #buttonSection {
+#petitionCover.petitionBorder #petitionPropertiesForm {
+	
+	width: 100% !important;
+	grid-column-start: 1;
+	grid-column-end: span 2;
+	display: block;
+	margin: 0 !important;
+	text-align: center;
+	
+	#buttonSection {
 	/* buttonSection wird in umschlag.scss definiert, aber kein abweichendes Parent im Umschlag zu PetitionProperties, daher hier override */
 
-	position: static;
-	text-align: left;
-	@include box-shadow(0, 0, 0, 0, white);
+		position: static;
+		text-align: center;
+		@include box-shadow(0, 0, 0, 0, white);
 
 
-	input:nth-of-type(2) {
-		@extend %umschlagbutton;
+		input:nth-of-type(2) {
+			@extend %umschlagbutton;
+		}
+		input[value="Speichern"] {
+			@extend %primaryumschlagbutton;
+		}
 	}
-	input[value="Speichern"] {
-		@extend %primaryumschlagbutton;
-	}
+
 }
 
 /* Inputs Präfix und Titel */
@@ -27,16 +38,33 @@
 	.inputContainer {
 		margin-bottom: 20px;
 
+		.labelContainer {
+			@include respond-to(sm) {
+				margin-bottom: 5px;
+				display: block;
+			}
+		}
+
 		.widgetContainer {
 			@include tooltip(20px, 200px);
 
 			&::before {
 				left: calc(101% + 8px);
 				top: 5px;
+
+				@include respond-to(sm) {
+					position: static;
+					display: block !important;
+					
+				}
 			}
 			
 			&::after {
 				left: 101%;
+
+				@include respond-to(sm) {
+					display: none !important;
+				}
 			}
 		}
 

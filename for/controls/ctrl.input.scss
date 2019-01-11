@@ -54,8 +54,9 @@ Austesten, welche Größen hier passen
 /*----------------------------------------------------------------------------------
 # READONLY
 ----------------------------------------------------------------------------------*/
-.xfControl input[disabled], .xfControl select[disabled] {
+.xfControl [disabled], .xfControl.xfInvalid [disabled] .xfControl input[disabled], .xfControl select[disabled] {
 	border: none !important;
+	cursor: not-allowed;
 
 	&:hover {
 		background: color(input, default) !important;
@@ -71,4 +72,10 @@ Austesten, welche Größen hier passen
 	font-family: $font;
 	font-size: fontsize(body);
 	margin-left: 0;
+	line-height: 1.2;
+
+	* {
+		font-size: fontsize(body);
+		line-height: 1.2;
+	}
 }

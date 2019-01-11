@@ -6,19 +6,20 @@
 	
 	.labelContainer {
 		margin-bottom: 55px !important;
+	}
 		
-		label {
-			&::before {
-				@extend %button;
-				content: "Datei wählen";
-				position: absolute;
-				top: calc(100% + 10px);
-				left: 0;
-				cursor: pointer;
-				z-index: 10;
-			}
+	label {
+		&::before {
+			@extend %button;
+			content: "Datei wählen";
+			position: absolute;
+			top: calc(100% + 10px);
+			left: 0;
+			cursor: pointer;
+			z-index: 10;
 		}
 	}
+	
 	
 	.widgetContainer {
 		

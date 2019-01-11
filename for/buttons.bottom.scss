@@ -68,6 +68,24 @@
 		}
 	}
 
+	#finish {
+		button {
+			@extend %primarybutton;
+		}
+	}
+
+	#sign {
+		button {
+			@extend %primarybutton;
+		}
+
+		~ #finish {
+			button {
+				@extend %button;
+			}
+		}
+	}
+
 	#next {
 		button {
 			@extend %primarybutton;

@@ -124,41 +124,47 @@ evtl. wieder weg falls Formularsammlungen ohne Reihenfolge
 		.ui-datagrid-content {
 			margin-right: 50px !important;
 			padding-bottom: 20px;
+			counter-reset: rowNumber;
+
+			tr.ui-datagrid-row {
+				border: none;
+				box-shadow: none;
+				counter-increment: rowNumber;
+				position: relative;
+
+				&:first-child td::after {
+					top: 50%;
+					height: 60%;
+				}
+				&:last-child td::after {
+					height: 50%;
+				}
+
+				// Nummer
+				td::before {
+					@extend %nummerierung;
+					background: color(primary, light);
+				}
+				td:hover::before {
+					@include box-shadow(0px, 0px, 3px, 1px, color(grey, dark));
+				}
+		
+				// Linie
+				td::after {
+					position: absolute;
+					left: 43px;
+					top: 0;
+					width: 2px;
+					background: color(primary, light);
+					height: 110%;
+					content: "";
+				}
+
+			} 
+			
 		}
 
-		.ui-datagrid-row {
-			border: none;
-			box-shadow: none;
-			counter-increment: rowNumber;
-			position: relative;
-		} 
-
-		// Nummer
-		td::before {
-			@extend %nummerierung;
-			background: color(primary, light);
-		}
-		td:hover::before {
-			@include box-shadow(0px, 0px, 3px, 1px, color(grey, dark));
-		}
-
-		// Linie
-		td::after {
-			position: absolute;
-			left: 43px;
-			top: 0;
-			width: 2px;
-			background: color(primary, light);
-			height: 110%;
-			content: "";
-		}
-		tr:first-child td::after {
-			top: 50%;
-			height: 60%;
-		}
-		tr:last-child td::after {
-			height: 50%;
-		}
+		
 
 /*----------------------------------------------------------------------------------
 # ERLEDIGT MARKIERTE MELDUNGEN
