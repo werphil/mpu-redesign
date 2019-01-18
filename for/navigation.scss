@@ -35,7 +35,7 @@
     &:hover, &:active {
 
         @include respond-to(md) {
-            height: 60%;
+            max-height: 60%;
             overflow-y: scroll;
             position: absolute;
             z-index: 99999;
@@ -105,20 +105,11 @@
             display: block !important;
             width: 100% !important;
             overflow: hidden;
-            white-space: nowrap;
 
             @include respond-to(md) {
                 padding: 15px 0 !important;
             }
 
-            &::before {
-                @include circle(32px);
-                content: counter(navi);
-                font-size: fontsize(body);
-                margin-right: 5px;
-                background: color(primary, light);
-                color: color(white);
-            }
 
             &:hover {
                 @extend %menuhover;
@@ -180,14 +171,13 @@
             }
             a {
                 color: color(danger) !important;
-                &::before {
-                    background: color(danger);
-                }
+
     
-                &::after {
+                &::before {
                     content: "!";
+                    font-family: $font;
                     padding: 3px 5px;
-                    margin-left: 5px;
+                    margin-right: 5px;
                     background: color(danger);
                     color: color(white);
                 }

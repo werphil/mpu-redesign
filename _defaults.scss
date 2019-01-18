@@ -139,3 +139,39 @@
     color: color(white);
     content: "!";
 }
+
+%infoIcon {
+    @include circle(18px);
+    content: "i";
+    border: 1px solid color(grey, dark);
+    display: inline-block;
+    margin-right: 10px;
+    cursor: help;
+
+    &:hover {
+        background: color(primary, dark) !important;
+        color: color(white) !important;
+    }
+}
+
+// Tooltips (Hilfetexte)
+$ttBackground: color(white);
+$ttBorder: color(grey, dark);
+$ttArrowSize: 10px;
+$ttBorderSize: 3px;
+
+%helpText {
+	position: absolute !important;
+	background: $ttBackground;
+    border: 2px solid $ttBorder;
+    top: 40px !important;
+    left: auto !important;
+    right: -40px !important;
+    font-size: fontsize(body);
+    line-height: 1.1;
+    padding: 10px;
+    font-family: $font;
+    z-index: 10;
+    min-width: 380px;
+    
+}

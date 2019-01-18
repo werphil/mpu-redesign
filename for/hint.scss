@@ -1,7 +1,7 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # FORMULAR - GRÜNES I
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
+/*
 %helptext {
 	position: relative !important;
 	top: 0;
@@ -27,8 +27,7 @@
 	font-size: fontsize(hint);
 	font-weight: normal;
 	line-height: 1.1;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+
 
 	@include transition(all, 0.5s, ease-in-out);
 	// @hax
@@ -96,29 +95,48 @@
 		}
 		&::after {
 			display: none;
-			/*
-			@include circle(26px);
-			content: "x";
-			padding: 0;
-			top: -10px;
-			right: -10px;
-			*/
+
 		}
 	}
-}
+}*/
 
 .helptextContainer {
+
+	position: absolute;
+	display: block;
+	right: 20px;
+
 	img.hintIcon {
-		display: none;
+		position: absolute;
+		opacity: 0;
+		width: 20px;
+		height: 20px;
+		z-index: 2 !important;
+	}
+
+	&::before {
+		@extend %infoIcon;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 1;
+		margin: 0;
 	}
 
 	.helpText {
-		@extend %helptext;
+		@extend %helpText;
+		right: -5px !important;
+		top: -10px !important;
+		z-index: 99999999 !important;
+		pointer-events: none;
+		width: 100% !important;
+
 	}
 }
 
+/*
 .bfHelpText {
 	@extend %helptext;
-}
+} */
 
 

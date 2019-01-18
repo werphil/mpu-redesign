@@ -10,7 +10,7 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # MIXINS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .markedAsDone::before, .petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-content tr.ui-datagrid-row td::before {
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data .markedAsDone::before, .petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data tr.ui-datagrid-row .ui-datagrid-column::before {
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -138,6 +138,39 @@
 /*----------------------------------------------------------------------------------
 # INFOS, ERRORS, ...
 ----------------------------------------------------------------------------------*/
+.filterLabel > span::before {
+  width: 18px !important;
+  height: 18px !important;
+  display: inline-block !important;
+  line-height: 18px !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  content: "i";
+  border: 1px solid #4D4D4D;
+  display: inline-block;
+  margin-right: 10px;
+  cursor: help;
+}
+.filterLabel > span:hover::before {
+  background: #00264b !important;
+  color: white !important;
+}
+
+.filterLabel > span .infoText.infoText-display {
+  position: absolute !important;
+  background: white;
+  border: 2px solid #4D4D4D;
+  top: 40px !important;
+  left: auto !important;
+  right: -40px !important;
+  font-size: 14px !important;
+  line-height: 1.1;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif !important;
+  z-index: 10;
+  min-width: 380px;
+}
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # LAYOUT DER MELDUNGSABLAGE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -292,10 +325,12 @@ body {
 }
 
 /*----------------------------------------------------------------------------------
-# MOBILE ANSICHT
+# USP HEADER
 ----------------------------------------------------------------------------------*/
-#header #melHeader img {
-  display: none;
+@media (max-width: 992px) {
+  #header #melHeader img {
+    display: none;
+  }
 }
 
 /*----------------------------------------------------------------------------------
@@ -397,6 +432,43 @@ body {
   position: absolute;
   right: 5px;
   top: 5px;
+  display: block;
+}
+.filterLabel > span::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  margin: 0;
+}
+.filterLabel > span .infoText.infoText-display::after, .filterLabel > span .infoText.infoText-display::before {
+  bottom: 100%;
+  right: 10px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.filterLabel > span .infoText.infoText-display::after {
+  border-color: rgba(68, 68, 68, 0);
+  border-bottom-color: white;
+  border-width: 10px;
+  margin-left: -10px;
+}
+.filterLabel > span .infoText.infoText-display::before {
+  border-color: rgba(68, 68, 68, 0);
+  border-bottom-color: #4D4D4D;
+  border-width: 12px;
+  margin-left: -12px;
+}
+.filterLabel > span img {
+  position: absolute;
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  z-index: 2 !important;
 }
 @media (max-width: 992px) {
   .filterLabel {
@@ -515,7 +587,7 @@ body {
   box-shadow: 1px 1px 2px 1px #00436a !important;
 }
 
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-column:hover, .petitionTable .petitionCell:hover {
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data tr.ui-datagrid-row .ui-datagrid-column:hover, .petitionTable .petitionCell:hover {
   background: -moz-linear-gradient(top, rgba(242, 242, 242, 0.65) 0%, rgba(242, 242, 242, 0) 100%) !important;
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(242, 242, 242, 0.65) 0%, rgba(242, 242, 242, 0) 100%) !important;
@@ -545,6 +617,19 @@ body {
   font-size: 11px !important;
   margin-bottom: 8px !important;
 }
+@media (max-width: 767px) {
+  .petitionTable .petitionAttributes > div {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .petitionTable .petitionAttributes .leftColumn {
+    width: 60%;
+  }
+  .petitionTable .petitionAttributes .centerColumn:nth-of-type(2) {
+    display: none;
+  }
+}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # FORMULARSAMMLUNGEN
@@ -572,19 +657,6 @@ body {
 .petitionTable td.petitionCellFormStack .petitionAttributes {
   margin: 15px !important;
 }
-@media (max-width: 767px) {
-  .petitionTable td.petitionCellFormStack .petitionAttributes > div {
-    display: block;
-    width: 100%;
-    text-align: left;
-  }
-  .petitionTable td.petitionCellFormStack .petitionAttributes .leftColumn {
-    width: 60%;
-  }
-  .petitionTable td.petitionCellFormStack .petitionAttributes .centerColumn:nth-of-type(2) {
-    display: none;
-  }
-}
 .petitionTable td.petitionCellFormStack .formStackActionButtons {
   top: 10px;
   right: 5px;
@@ -607,36 +679,7 @@ body {
 .petitionTable td.petitionCellFormStack td {
   padding: 20px !important;
 }
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data {
-  border: none;
-  box-shadow: none;
-  border-collapse: separate;
-  /* @layout */
-  border-spacing: 0 5px;
-  margin-left: 10px;
-  /*----------------------------------------------------------------------------------
-  # PROZESSANSICHT MIT NUMMERIERUNG
-  evtl. wieder weg falls Formularsammlungen ohne Reihenfolge
-  ----------------------------------------------------------------------------------*/
-  /*----------------------------------------------------------------------------------
-  # ERLEDIGT MARKIERTE MELDUNGEN
-  ----------------------------------------------------------------------------------*/
-}
-@media (max-width: 767px) {
-  .petitionTable td.petitionCellFormStack table.ui-datagrid-data {
-    margin-left: 2px;
-  }
-}
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .petitionHeader {
-  font-size: 16px !important;
-  font-weight: normal !important;
-}
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-column {
-  border: none;
-  padding: 5px !important;
-  padding-left: 80px !important;
-}
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .markedAsDone::before, .petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-content tr.ui-datagrid-row td::before {
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data .markedAsDone::before, .petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data tr.ui-datagrid-row .ui-datagrid-column::before {
   width: 48px !important;
   height: 48px !important;
   display: inline-block !important;
@@ -650,33 +693,85 @@ body {
   color: white;
   z-index: 99;
 }
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-content {
+.petitionTable td.petitionCellFormStack .ui-datagrid-content {
   margin-right: 50px !important;
   padding-bottom: 20px;
   counter-reset: rowNumber;
 }
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-content tr.ui-datagrid-row {
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data {
+  border: none;
+  box-shadow: none;
+  border-collapse: separate;
+  /* @layout */
+  border-spacing: 0 5px;
+  margin-left: 10px;
+  /*----------------------------------------------------------------------------------
+  # ERLEDIGT MARKIERTE MELDUNGEN
+  ----------------------------------------------------------------------------------*/
+}
+@media (max-width: 767px) {
+  .petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data {
+    margin-left: 2px;
+  }
+}
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data tr.ui-datagrid-row {
   border: none;
   box-shadow: none;
   counter-increment: rowNumber;
   position: relative;
 }
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-content tr.ui-datagrid-row:first-child td::after {
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data tr.ui-datagrid-row:first-child td.ui-datagrid-column::after {
   top: 50%;
   height: 60%;
 }
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-content tr.ui-datagrid-row:last-child td::after {
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data tr.ui-datagrid-row:last-child td.ui-datagrid-column::after {
   height: 50%;
 }
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-content tr.ui-datagrid-row td::before {
-  background: #00436a;
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data tr.ui-datagrid-row .ui-datagrid-column {
+  border: none;
+  border-bottom: 2px solid #E8EEF1 !important;
+  padding: 5px !important;
+  padding-left: 80px !important;
+  -webkit-transition: padding 0.5s ease;
+  -moz-transition: padding 0.5s ease;
+  -o-transition: padding 0.5s ease;
+  transition: padding 0.5s ease;
+  -webkit-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  transition-delay: 0.5s;
 }
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-content tr.ui-datagrid-row td:hover::before {
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data tr.ui-datagrid-row .ui-datagrid-column .petitionHeader {
+  font-size: 16px !important;
+  font-weight: normal !important;
+  -webkit-transition: font-size 0.5s ease;
+  -moz-transition: font-size 0.5s ease;
+  -o-transition: font-size 0.5s ease;
+  transition: font-size 0.5s ease;
+  -webkit-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data tr.ui-datagrid-row .ui-datagrid-column:hover {
+  -webkit-box-shadow: 0px 0px 3px 1px #001A32 !important;
+  -moz-box-shadow: 0px 0px 3px 1px #001A32 !important;
+  box-shadow: 0px 0px 3px 1px #001A32 !important;
+  border: none !important;
+  padding: 25px 5px 25px 80px !important;
+}
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data tr.ui-datagrid-row .ui-datagrid-column:hover .petitionHeader {
+  font-size: 18px !important;
+}
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data tr.ui-datagrid-row .ui-datagrid-column:hover::before {
   -webkit-box-shadow: 0px 0px 3px 1px #4D4D4D !important;
   -moz-box-shadow: 0px 0px 3px 1px #4D4D4D !important;
   box-shadow: 0px 0px 3px 1px #4D4D4D !important;
 }
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .ui-datagrid-content tr.ui-datagrid-row td::after {
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data tr.ui-datagrid-row .ui-datagrid-column::before {
+  background: #00436a;
+}
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data tr.ui-datagrid-row .ui-datagrid-column::after {
   position: absolute;
   left: 43px;
   top: 0;
@@ -685,14 +780,14 @@ body {
   height: 110%;
   content: "";
 }
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .markedAsDone {
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data .markedAsDone {
   background: none;
 }
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .markedAsDone::before {
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data .markedAsDone::before {
   background: #4D4D4D;
   z-index: 100;
 }
-.petitionTable td.petitionCellFormStack table.ui-datagrid-data .markedAsDone input[value=Ansehen] {
+.petitionTable td.petitionCellFormStack .ui-datagrid-content table.ui-datagrid-data .markedAsDone input[value=Ansehen] {
   background: #4D4D4D !important;
 }
 
@@ -754,6 +849,7 @@ body {
 # MEL - HEADERLEISTE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #melContent #coverHeader {
+  margin-bottom: 10px;
   /*----------------------------------------------------------------------------------
   # MELDUNG TITEL
   ----------------------------------------------------------------------------------*/
@@ -768,6 +864,10 @@ body {
     flex-flow: row nowrap;
     min-width: 0px;
   }
+}
+#melContent #coverHeader .ivpCovertitleWrapper .ivpLogo {
+  margin-top: 10px;
+  text-align: right;
 }
 @media (max-width: 992px) {
   #melContent #coverHeader .ivpCovertitleWrapper {
@@ -842,19 +942,27 @@ body {
 }
 #melContent #coverHeader #closeCover::before {
   content: "x";
-  width: 100%;
-  height: 40px;
-  font-size: 32px;
-  line-height: 40px;
+  width: 40px !important;
+  height: 40px !important;
+  display: inline-block !important;
+  line-height: 40px !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  margin: 0 !important;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 26px;
+  line-height: 35px !important;
   text-align: center;
   display: block;
-  color: #A82C10 !important;
+  color: black !important;
+  border: 1px solid black !important;
   text-decoration: none !important;
 }
 @media (max-width: 992px) {
   #melContent #coverHeader #closeCover::before {
     content: "‹";
     color: white !important;
+    border-radius: 0 !important;
     border: none !important;
     text-align: center !important;
     height: 45px !important;
@@ -873,6 +981,9 @@ body {
 #melContent #coverHeader #closeCover:hover::before {
   text-shadow: 0px 0px 3px #4D4D4D;
   text-decoration: none !important;
+  -webkit-box-shadow: 0px 0px 2px 1px #4D4D4D !important;
+  -moz-box-shadow: 0px 0px 2px 1px #4D4D4D !important;
+  box-shadow: 0px 0px 2px 1px #4D4D4D !important;
 }
 @media (max-width: 992px) {
   #melContent #coverHeader #closeCover:hover::before {
@@ -896,7 +1007,10 @@ body {
 #melContent .ivpCoverButtonsWrapper {
   text-align: left;
   margin-top: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 0;
+  -webkit-box-shadow: 0px 4px 2px -2px #00264b !important;
+  -moz-box-shadow: 0px 4px 2px -2px #00264b !important;
+  box-shadow: 0px 4px 2px -2px #00264b !important;
 }
 @media (max-width: 992px) {
   #melContent .ivpCoverButtonsWrapper {
@@ -930,7 +1044,7 @@ body {
   }
 }
 #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton.activeCoverButton, #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton:hover {
-  border-bottom: 2px solid #00436B;
+  border-bottom: 2px solid #00264b;
 }
 #melContent .ivpCoverButtonsWrapper #coverButtons .coverButton a {
   font-size: 16px !important;
@@ -1121,9 +1235,9 @@ body {
   margin-bottom: 100px;
   border: none !important;
   font-size: 14px !important;
-  display: grid;
+  /* display: grid;
   grid-template-columns: 70% 30%;
-  grid-template-rows: 400px auto;
+  grid-template-rows: 400px auto; */
   overflow-y: auto;
   overflow-x: hidden;
   /*----------------------------------------------------------------------------------
@@ -1156,12 +1270,23 @@ body {
   grid-column-end: span 2;
   grid-row-start: 1;
   text-align: left;
-  background: #F2F2F2;
   overflow-x: hidden;
   overflow-y: auto;
-  -webkit-box-shadow: 0px 0px 5px 1px #4D4D4D !important;
-  -moz-box-shadow: 0px 0px 5px 1px #4D4D4D !important;
-  box-shadow: 0px 0px 5px 1px #4D4D4D !important;
+  -webkit-box-shadow: 0px 0px 2px 1px #4D4D4D !important;
+  -moz-box-shadow: 0px 0px 2px 1px #4D4D4D !important;
+  box-shadow: 0px 0px 2px 1px #4D4D4D !important;
+  /*.petitionProperties {
+  		display: block;
+  		line-height: 1.1 !important;
+  		width: 100%;
+  		margin: 0 10px;
+  
+  		.outputLabel {
+  			text-align: left;
+  			width: 30%;
+  			font-weight: bold;
+  		}
+  	}*/
 }
 @media (max-width: 992px) {
   #petitionCover.petitionBorder #section1 {
@@ -1169,16 +1294,23 @@ body {
     padding: 0 !important;
   }
 }
-#petitionCover.petitionBorder #section1 .petitionProperties {
-  display: block;
-  line-height: 1.1 !important;
-  width: 100%;
-  margin: 0 10px;
+#petitionCover.petitionBorder #section1 a.external {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.3 !important;
+  color: #00436a !important;
+  text-decoration: none;
+}
+#petitionCover.petitionBorder #section1 a.external:hover {
+  color: #001A32 !important;
+  text-decoration: underline;
 }
 #petitionCover.petitionBorder #section1 .petitionProperties .outputLabel {
   text-align: left;
   width: 30%;
   font-weight: bold;
+  padding-left: 10px;
+  word-break: break-all;
 }
 #petitionCover.petitionBorder #sectionPrefillDeclaration {
   display: block;

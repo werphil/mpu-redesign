@@ -49,6 +49,53 @@
 		position: absolute;
 		right: 5px;
 		top: 5px;
+		display: block;
+
+		&::before {
+			@extend %infoIcon;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 1;
+			margin: 0;
+		}
+
+		.infoText.infoText-display {
+			@extend %helpText;
+
+			&::after, &::before {
+				bottom: 100%;
+				right: 10px;
+				border: solid transparent;
+				content: " ";
+				height: 0;
+				width: 0;
+				position: absolute;
+				pointer-events: none;
+			}
+		
+			&::after {
+				border-color: rgba(68, 68, 68, 0);
+				border-bottom-color: $ttBackground;
+				border-width: $ttArrowSize;
+				margin-left: -$ttArrowSize;
+			}
+		
+			&::before {
+				border-color: rgba(68, 68, 68, 0);
+				border-bottom-color: $ttBorder;
+				border-width: 12px;
+				margin-left: -12px;
+			}
+		}
+
+		img {
+			position: absolute;
+			opacity: 0;
+			width: 20px;
+			height: 20px;
+			z-index: 2 !important;
+		}
 	}
 
 	@include respond-to(md) {

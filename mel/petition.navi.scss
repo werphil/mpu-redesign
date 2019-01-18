@@ -8,7 +8,9 @@
 #melContent .ivpCoverButtonsWrapper {
 	text-align: left;
 	margin-top: 10px;
-	margin-bottom: 15px;
+	margin-bottom: 0;
+
+	@include box-shadow(0px, 4px, 2px, -2px, color(primary, dark));
 
 	@include respond-to(md) {
 		flex: 0 0 (3 * $navIconWidth);
@@ -41,7 +43,7 @@
 			}
 
 			&.activeCoverButton, &:hover {
-				border-bottom: 2px solid color(hover, light);
+				border-bottom: 2px solid color(primary, dark);
 			}
 
 			a {

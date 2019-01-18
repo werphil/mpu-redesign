@@ -22,22 +22,6 @@
 
 	.petitionAttributes {
 		margin: 15px !important;
-
-		@include respond-to(sm) {
-			> div {
-				display: block;
-				width: 100%;
-				text-align: left;
-			}
-
-			.leftColumn {
-				width: 60%;
-			}
-			// Bearbeiter ausblenden
-			.centerColumn:nth-of-type(2) {
-				display: none;
-			}
-		}
 	}
 
 /*----------------------------------------------------------------------------------
@@ -78,6 +62,25 @@
 /*----------------------------------------------------------------------------------
 # ENTHALTENE PETITIONS
 ----------------------------------------------------------------------------------*/
+
+%nummerierung {
+	@extend %vertical-centered;
+	@include circle(48px);
+
+	content: counter(rowNumber);
+	position: absolute;
+	left: 20px;
+	font-size: fontsize(title);
+	color: color(white);
+	z-index: 99;
+}
+
+
+.ui-datagrid-content {
+	margin-right: 50px !important;
+	padding-bottom: 20px;
+	counter-reset: rowNumber;
+
 	table.ui-datagrid-data {
 
 		border: none;
@@ -90,67 +93,60 @@
 			margin-left: 2px;
 		}
 
-		.petitionHeader {
-			font-size: fontsize(lead);
-			font-weight: normal !important;
-		}
-
-		.ui-datagrid-column {
+		tr.ui-datagrid-row {
 			border: none;
-			padding: 5px !important;
-			padding-left: 80px !important; // Platz für Nummerierung
-			
-			&:hover {
-				@extend %petition-hover;
+			box-shadow: none;
+			counter-increment: rowNumber;
+			position: relative;
+
+			&:first-child td.ui-datagrid-column::after {
+				top: 50%;
+				height: 60%;
 			}
-		}
+			&:last-child td.ui-datagrid-column::after {
+				height: 50%;
+			}
 
-/*----------------------------------------------------------------------------------
-# PROZESSANSICHT MIT NUMMERIERUNG
-evtl. wieder weg falls Formularsammlungen ohne Reihenfolge
-----------------------------------------------------------------------------------*/
-		%nummerierung {
-			@extend %vertical-centered;
-			@include circle(48px);
-
-			content: counter(rowNumber);
-			position: absolute;
-			left: 20px;
-			font-size: fontsize(title);
-			color: color(white);
-			z-index: 99;
-		}
-
-		.ui-datagrid-content {
-			margin-right: 50px !important;
-			padding-bottom: 20px;
-			counter-reset: rowNumber;
-
-			tr.ui-datagrid-row {
+			.ui-datagrid-column {
 				border: none;
-				box-shadow: none;
-				counter-increment: rowNumber;
-				position: relative;
+				border-bottom: 2px solid color(support, light) !important;
+				padding: 5px !important;
+				padding-left: 80px !important; // Platz für Nummerierung
 
-				&:first-child td::after {
-					top: 50%;
-					height: 60%;
+				@include transition(padding, 0.5s, ease);
+				@include transition-delay(0.5s);
+
+				.petitionHeader {
+					font-size: fontsize(lead);
+					font-weight: normal !important;
+
+					@include transition(font-size, 0.5s, ease);
+					@include transition-delay(0.5s);
 				}
-				&:last-child td::after {
-					height: 50%;
+				
+				&:hover {
+					@extend %petition-hover;
+					@include box-shadow(0px, 0px, 3px, 1px, color(hover, dark));
+					border: none !important;
+					padding: 25px 5px 25px 80px !important;
+
+					.petitionHeader {
+						font-size: fontsize(title);
+					}
+
+					&::before {
+						@include box-shadow(0px, 0px, 3px, 1px, color(grey, dark));
+					}
 				}
 
 				// Nummer
-				td::before {
+				&::before {
 					@extend %nummerierung;
 					background: color(primary, light);
 				}
-				td:hover::before {
-					@include box-shadow(0px, 0px, 3px, 1px, color(grey, dark));
-				}
-		
+
 				// Linie
-				td::after {
+				&::after {
 					position: absolute;
 					left: 43px;
 					top: 0;
@@ -160,29 +156,28 @@ evtl. wieder weg falls Formularsammlungen ohne Reihenfolge
 					content: "";
 				}
 
-			} 
-			
+			}
 		}
-
-		
 
 /*----------------------------------------------------------------------------------
 # ERLEDIGT MARKIERTE MELDUNGEN
 ----------------------------------------------------------------------------------*/
-		.markedAsDone {
-			background: none;
+	.markedAsDone {
+		background: none;
 
-			// Nummerierung ausgrauen
-			&::before {
-				@extend %nummerierung;
-				background: color(grey, dark);
-				z-index: 100;
-			}
-
-			input[value=Ansehen] {
-				background: color(grey, dark) !important;
-			}
+		// Nummerierung ausgrauen
+		&::before {
+			@extend %nummerierung;
+			background: color(grey, dark);
+			z-index: 100;
 		}
 
+		input[value=Ansehen] {
+			background: color(grey, dark) !important;
+		}
 	}
-}
+
+}// data
+}// content
+
+}// formstack

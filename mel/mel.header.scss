@@ -111,12 +111,14 @@
 }
 
 /*----------------------------------------------------------------------------------
-# MOBILE ANSICHT
+# USP HEADER
 ----------------------------------------------------------------------------------*/
 #header {
-	@extend %mobileHeader;
 
-	#melHeader img {
-		display: none;
+	@include respond-to(md) {
+		@extend %mobileHeader;
+		#melHeader img {
+			display: none;
+		}
 	}
 }

@@ -54,8 +54,27 @@
 		}
 	}
 
-	.petitionAttributes .fourColLayout {
-		font-size: fontsize(hint);
-		margin-bottom: 8px !important;
+	.petitionAttributes {
+		
+		.fourColLayout {
+			font-size: fontsize(hint);
+			margin-bottom: 8px !important;
+		}
+
+		@include respond-to(sm) {
+			> div {
+				display: block;
+				width: 100%;
+				text-align: left;
+			}
+
+			.leftColumn {
+				width: 60%;
+			}
+			// Bearbeiter ausblenden
+			.centerColumn:nth-of-type(2) {
+				display: none;
+			}
+		}
 	}
 }

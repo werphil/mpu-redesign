@@ -101,7 +101,7 @@
 	}
 
 	@include respond-to(md) {
-		#check-current, #check-form, #cancel {
+		#check-current, #cancel {
 			display: none;
 		}
 		#save {
@@ -110,6 +110,21 @@
 			&::before {
 				content: "\1F4BE";
 				border: 1px solid color(black);
+			}
+			&:hover {
+				&::before {
+					@include box-shadow(0px, 0px, 3px, 1px, color(grey, dark));
+				}
+			}
+		}
+
+		#check-form {
+			@extend %hidebutton;
+
+			&::before {
+				content: "\2714";
+				border: 1px solid color(black);
+				font-family: $font;
 			}
 			&:hover {
 				&::before {

@@ -105,12 +105,12 @@ $buttons_hoehe_margin: 100px; //Höhe der Buttons plus Margin
 # ZWEISPALTIGE LAYOUTS
 ----------------------------------------------------------------------------------*/
 						.keep-together {
-							display: flex;
+							/*display: flex;
 							flex-flow: row wrap;
 						
 							> .xfControl {
 								flex: 1;
-							}
+							}*/
 						}
 					}
 				}
